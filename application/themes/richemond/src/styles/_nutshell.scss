@@ -1,0 +1,23 @@
+.nutshell {
+  @include small-uppercase;
+  font-weight: 400;
+  color: $c-gray-dark;
+  @include if-smaller-than(sm) {
+    margin-bottom: 15px;
+  }
+  ul {
+    display: flex;
+    @include if-smaller-than(md) {
+      display: block;
+    }
+  }
+  li {
+    list-style: none;
+    + li {
+      margin-left: 80px;
+      @include if-smaller-than(md) {
+        margin-left: 0;
+      }
+    }
+  }
+}

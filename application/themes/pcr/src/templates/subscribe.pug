@@ -1,0 +1,17 @@
+- var content_class = 'content__sm'
+
+if is_home
+    - content_class = 'content__md'
+
+.content__subscribe(class = content_class)
+    +additional-content('Subscribe to our newsletter')
+    +pic-box(require('@/images/subscribe/subscribe.jpg'), 'subscribe bg image', require('@/images/subscribe/subscribe@2x.jpg'))(class='image-box_light-transparent')
+    .grid-container
+        .grid-x
+            .cell.large-offset-2.large-8.small-12
+                .contact-box.contact-box_subscribe.grid-x.grid-margin-x
+                    .medium-6.small-12.cell
+                        +section-content('keep abreast of developments', 'Subscribe to our newsletter')
+                    .medium-6.small-12.cell
+                        .contact-box__wrap
+                            include blocks/subscribe

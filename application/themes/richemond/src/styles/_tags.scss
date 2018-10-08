@@ -1,0 +1,23 @@
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: -20px;
+  margin-right: -10px;
+  a {
+    margin-top: 20px;
+    margin-left: 20px;
+    display: block;
+    border: 1px solid #d2d5e0;
+    border-radius: 3px;
+    @include small-uppercase;
+    padding: 5px 20px;
+    color: $c-gray-dark;
+    &.active {
+      background: $c-white;
+      pointer-events: none;
+      color: $c-blue-dark;
+      border: none;
+    }
+  }
+}

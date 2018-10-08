@@ -1,0 +1,19 @@
+extends ../layout
+
+block vars
+    - page_title = 'News'
+
+block content
+    .content__cover.content__cover-lg
+        +additional-content('Prestige Car Romand', 'Prestige')(class='bg-text_right cover-bg-text')
+        +pic-box(require('../../images/cover/cover-cars.jpg'), 'Lamborghini', require('../../images/cover/cover-cars@2x.jpg'))(class='image-box_cover image-box_cover-lg image-box_top-shadow image-box_btm-shadow' data-animation="parallax")
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-8.cell
+                    +cover-content('Grande sélection de voitures pour vous', 'Choose the best car', 'All the rumors have finally died down and many skeptics have tightened their lips.')(class='info-box_cover')
+
+    .content__api
+        //div(data-embedded-src="https://www.autoscout24.ch/fr/hci/list?design=3071&filter=6353" class="embedded-content-area")
+        div(data-embedded-src="https://www.autoscout24.ch/fr/hci/list?design=124&filter=121" class="embedded-content-area")
+        script(src="https://www.autoscout24.ch/MVC/Content/as24-hci-desktop/js/e.min.js")
+        //script(src='scripts/lib/autoscout24.js')

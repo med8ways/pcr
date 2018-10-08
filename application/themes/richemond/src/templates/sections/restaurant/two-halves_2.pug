@@ -1,0 +1,25 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_stacked'
+
+block layer_fluid
+    a(href='').two-halves__image
+        +image_srcset(require('../../images/party.jpg?sizes=640w+1024w+1400w'), 1400, '100vw')
+
+block layer_contained
+    .grid-x.grid-margin-x
+        .large-8.large-offset-2
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-party.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Events
+                            h2 Le Jardin and Le Bar seasonal events
+                    .line-x
+                    .user-editable-content.user-editable-content_text-center
+                        p Throughout the year, Le Jardin presents a series of special events to be discovered in our calendar. To further enjoy the expertise of our chef, you can also try our catering service.
+                    .content-pattern__buttons.flex-container.align-center
+                        a.button(href="restaurant-events.html") View our calendar

@@ -1,0 +1,36 @@
+header.header
+    .grid-container
+        .header__box
+            .header__lang
+                +link('/en', 'eng')(class='active')
+                +link('/fr', 'fr')
+            +pic-link('index.html', require('../../images/Logo.png'), 'logo', require('../../images/Logo@2x.png'))(class='logo')
+            .header__btn(data-type="hamburger-button")
+                .icon-hamburger
+                    span
+                    span
+                    span
+        .header__menu.menu
+            .bg-text PRESTIGE CAR ROMAND
+            .menu-content
+                .grid-x.grid-margin-x
+                    .large-offset-8.large-4.cell
+                        .menu-list
+                            ul
+                                li
+                                    a(href='about.html').menu__item About us
+                                li
+                                    a(href='services.html').menu__item Services
+                                li
+                                    a(href='cars.html').menu__item Used cars
+                                li
+                                    a(href='news.html').menu__item News
+                                li.has-children
+                                    span.menu__item Events
+                                    ul
+                                        li
+                                            a(href='event.html').menu__item L'Eco-Trophée des Neiges
+                                        li
+                                            a(href='event.html').menu__item Course de côte de Massongex
+                                li
+                                    a(href='contact.html').menu__item Contact us

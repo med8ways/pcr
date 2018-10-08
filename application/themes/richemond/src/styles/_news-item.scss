@@ -1,0 +1,44 @@
+.news-item {
+  @include square;
+  position: relative;
+  overflow: visible;
+  margin: 5px;
+  &__image {
+    @include covers-parent;
+    @include image-cover;
+  }
+  &__bottom {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    opacity: .6;
+    color: $c-gray-dark;
+    font-size: 16px;
+    text-align: center;
+    transition: opacity .4s $easing,
+    color .4s $easing;
+    [class^='icon'] {
+      font-size: 16px;
+      min-width: 20px;
+      text-align: center;
+      margin-right: 10px;
+    }
+  }
+  &__text {
+    &, * {
+      @include small-uppercase;
+      line-height: 1em;
+    }
+  }
+  &:hover {
+    .news-item__bottom {
+      opacity: 1;
+      color: $c-accent;
+    }
+  }
+}

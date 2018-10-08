@@ -1,0 +1,20 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_stacked two-halves_bg-velvet'
+
+block layer_fluid
+    a(href='').two-halves__image
+        +image_srcset(require('../../images/illustration-map.jpg?sizes=640w+1024w+1400w'), 1400, '100vw')
+
+block layer_contained
+    .grid-x.grid-margin-x
+        .large-8.large-offset-2.cell
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__top
+                        .user-editable-content
+                            h2 Jogging map
+                    .line-x
+                    .user-editable-content.user-editable-content_text-center
+                        p Situated along the beautiful Lake Geneva, enjoy panoramic routes for runners of all categories.

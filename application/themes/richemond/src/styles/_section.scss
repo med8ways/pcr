@@ -1,0 +1,20 @@
+.section {
+  &_intro {
+    margin-top: 140px;
+    margin-bottom: 40px;
+    @include if-smaller-than(md) {
+      margin-top: 75px;
+    }
+    & + .two-halves {
+      margin-top: 0;
+    }
+  }
+  &_news {
+    z-index: 1; // to overflow the white thing
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  &_menu-carousel {
+    position: relative;
+  }
+}

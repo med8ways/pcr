@@ -1,0 +1,16 @@
+- var classes = 'top-block'
+- var grid_classes = 'medium-8 medium-offset-2 cell'
+
+block vars
+
+section(class= classes)
+    .grid-container
+        block container
+            .grid-x
+                div(class= grid_classes)
+                    .line-y
+                    .text-center
+                        .emblem.emblem_small.emblem_white.emblem_collapsed
+                            i.icon-emblem-richemond
+                    .user-editable-content.user-editable-content_text-center
+                        block block_content

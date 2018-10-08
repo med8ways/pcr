@@ -1,0 +1,24 @@
+extends ../cover
+
+block vars
+    - image = require('../../images/cover_spa.jpg?sizes=640w+1024w+1400w')
+
+block append layers
+    .cover__overlay
+        .grid-container
+            .grid-x
+                .medium-8.medium-offset-2.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .line-y
+                        .cover__uppertext
+                            p Relaxation
+                        .cover__title
+                            h1 Le Spa by Sisley
+            .grid-x
+                .medium-6.medium-offset-3.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .user-editable-content.user-editable-content_text-center.o-80
+                            p Welcome to a world of well being at Le Spa by Sisley.
+            .mt-65.flex-container.align-center
+                a(href='spa-treatments.html').button.button_transparent Discover out treatments
+                a(href='').button Book a Spa

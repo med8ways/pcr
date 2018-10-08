@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="6px" height="11px" viewBox="0 0 6 11" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>pagination-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="News" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="News-List" transform="translate(-879.000000, -2554.000000)" fill="#020F18">
+            <g id="component-/-Pagination" transform="translate(525.000000, 2528.000000)">
+                <g id="Page-Next" transform="translate(325.000000, 0.000000)">
+                    <polygon id="pagination-arrow" transform="translate(32.019685, 31.933712) rotate(-90.000000) translate(-32.019685, -31.933712) " points="27 29 27 29.8422852 32.0251394 34.8674246 37.0393698 29.8531941 37.0393698 29 35.9975586 29 32.0251394 32.9337123 27.8818359 29"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

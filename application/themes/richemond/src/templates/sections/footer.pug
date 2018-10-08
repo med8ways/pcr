@@ -1,0 +1,51 @@
+footer.footer
+    .grid-container.flex-container.flex-dir-column.align-middle
+        .footer__logo
+            a(href='index.html')
+                img(src=require('../../images/icons/richemond-footer.svg') alt)
+        .footer__caption
+            include caption
+        .footer__social
+            include social
+        .footer__prefer
+            a(href='https://preferredhotels.com/destinations/geneva/le-richemond' target='_blank')
+                img(src=require('../../images/legend-preferred.svg') alt)
+            a(href='https://preferredhotels.com/iprefer/enroll?hotel=GVARI' target='_blank')
+                img(src=require('../../images/i-prefer-logo.png') alt)
+        nav.footer__nav.align-self-stretch
+            +ul([
+                {href: 'the-hotel.html', title: 'The Hotel'},
+                {href: 'restaurant.html', title: 'Restaurant'},
+                {href: 'conciergerie.html', title: 'Conciergerie'},
+                {href: 'offers.html', title: 'Offers'},
+                {href: 'news.html', title: 'News'},
+                {href: 'contact.html', title: 'Contact'},
+                {href: 'rooms.html', title: 'Suites & Rooms'},
+                {href: 'bar.html', title: 'Bar'},
+                {href: 'spa.html', title: 'SPA'},
+                {href: 'events.html', title: 'Events'},
+                {href: '', title: 'Career'},
+                {href: '', title: 'Booking'},
+                {href: 'gallery.html', title: 'Gallery'}
+            ])
+        section.footer__bottom.align-self-stretch
+            .grid-x.grid-margin-x
+                .large-5.cell
+                    .flex-container.align-justify.align-middle
+                        .user-editable-content
+                            h3 Newsletter
+                        include newsletter
+                .large-6.large-offset-1.cell
+                    .flex-container.flex-dir-column.align-bottom
+                        nav.footer__service-nav
+                            a(href='') Credits
+                            a(href='') Cookies
+                            a(href='') Legal Mention
+                            a(href='') Privacy Policy
+                            a(href='') Sitemap
+                        .footer__copyright
+                            p Copyright © Le Richemond 2017. All rights reserved
+    button.scroll-to-top
+        i.icon-arrow-up
+
+

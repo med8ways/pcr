@@ -1,0 +1,55 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Conciergerie'
+
+block content
+    include ../sections/conciergerie/cover
+    include ../sections/conciergerie/intro
+    .mt-60.grid-container
+        .user-editable-content.user-editable-content_text-center
+            h2 What to do in Geneva
+        .mt-50.grid-x.grid-margin-x.cards-row
+            .medium-6.large-4.cell
+                .card.card_small.card_popup
+                    +card_inner(
+                    null,
+                    'Maison Cailler',
+                    'As well as scenic views and adventure activities, there’s one thing that Switzerland does particularly well: chocolate.',
+                    require('../../images/card-cailler.jpg'),
+                    'Discover More'
+                    )
+            .medium-6.large-4.cell
+                .card.card_small.card_popup
+                    +card_inner(
+                    null,
+                    'Old Town',
+                    'Geneva’s Old Town is laden with historical sights, beautiful Art Nouveau architecture and myriad shopping and leisure opportunities. Stray from the bustling centre point ...',
+                    require('../../images/card-old-town.jpg'),
+                    'Discover More'
+                    )
+            .medium-6.large-4.cell
+                .card.card_small.card_popup
+                    +card_inner(
+                    null,
+                    'Hot air balloon trip',
+                    "While Lake Geneva is beautiful from the water, it's even more striking from the air. A hot air balloon ride is a wonderful opportunity to see Geneva from a fresh…",
+                    require('../../images/card-air-balloon.jpg'),
+                    'Discover More'
+                    )
+    .mt-60.grid-container
+        section.map(
+        data-lat='46.2098'
+        data-lng='6.152'
+        data-zoom='16'
+        data-marker-lat='46.20885'
+        data-marker-lng='6.1489379',
+        data-marker-icon=require('../../images/icons/marker.svg')
+        )
+    include ../sections/conciergerie/two-halves-1
+    include ../sections/conciergerie/two-halves-2
+
+
+
+block append breadcrumbs
+    +breadcrumb('Conciergerie')

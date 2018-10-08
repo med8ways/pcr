@@ -1,0 +1,18 @@
+.emblem {
+  color: #eceaf8;
+  font-size: 766px;
+  line-height: 1em;
+  [class^='icon'] {
+    display: block;
+  }
+  &_white {
+    color: $c-white;
+  }
+  &_small {
+    font-size: 256px;
+  }
+  &_collapsed {
+    height: 30px;
+    margin-top: -30px;
+  }
+}

@@ -1,0 +1,87 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Spa'
+
+block content
+    include ../sections/spa/cover
+    include ../sections/spa/intro
+    .mt-15
+        .grid-container
+            mixin spa_feature(image, text)
+                .medium-3.cell
+                    .spa-feature
+                        .spa-feature__image
+                            if image != null
+                                img(src=image alt)
+                        .spa-feature__text
+                            if text != null
+                                p= text
+            .grid-x
+                .medium-10.medium-offset-1.cell
+                    .grid-x.grid-margin-x
+                        +spa_feature(
+                        require('../../images/icons/spa-massage.svg'),
+                        '5 treatment rooms including a Thai themed treatment room'
+                        )
+                        +spa_feature(
+                        require('../../images/icons/spa-sauna.svg'),
+                        'Relaxation room/Steam room & sauna'
+                        )
+                        +spa_feature(
+                        require('../../images/icons/spa-other.svg'),
+                        'Full range of treatments'
+                        )
+                        +spa_feature(
+                        require('../../images/icons/spa-gym.svg'),
+                        'Gymnasium'
+                        )
+        .mt-35.flex-container.align-center
+            a(href='').button.button_transparent-dark Download our brochure
+    .mt-60.owl-container
+        .owl-carousel
+            img(src=require('../../images/spa.jpg') alt)
+            img(src=require('../../images/wine.jpg') alt)
+            img(src=require('../../images/dessert.jpg') alt)
+            img(src=require('../../images/party.jpg') alt)
+            img(src=require('../../images/air-balloon.jpg') alt)
+            img(src=require('../../images/cailler.jpg') alt)
+    .mt-100.mb-80.grid-container
+        .mb-50.user-editable-content.user-editable-content_text-center
+            h2 Treatments at Le Spa by Sisley
+        .grid-x.grid-margin-x
+            .medium-6.large-4.cell
+                .card.card_popup.card_small
+                    +card_inner(
+                    'CHF 550',
+                    'The 1, 2, 3 SLIMMING Phyto-Aromatic Body Treatment',
+                    '60 minutes per day during three days',
+                    require('../../images/card-spa-1.jpg'),
+                    '<a href="" class="button">Book Now</a>'
+                    )
+            .medium-6.large-4.cell
+                .card.card_popup.card_small
+                    +card_inner(
+                    "90': CHF 285 - 120': CHF 380",
+                    'Sisley Bodycare Duo',
+                    '90 or 120 minutes',
+                    require('../../images/card-spa-2.jpg'),
+                    '<a href="" class="button">Book Now</a>'
+                    )
+            .medium-6.large-4.cell
+                .card.card_popup.card_small
+                    +card_inner(
+                    "60': CHF 195 - 90': CHF 285",
+                    'Toni&Gui',
+                    '60 or 90 minutes',
+                    require('../../images/card-spa-3.jpg'),
+                    '<a href="" class="button">Book Now</a>'
+                    )
+        .mt-30.flex-container.align-center
+            a(href='spa-treatments.html').button.button_transparent-dark Show All Treatments
+    include ../sections/spa/two-halves
+    include ../sections/spa/contact
+    include ../sections/spa/highlights
+
+block append breadcrumbs
+    +breadcrumb('Spa')

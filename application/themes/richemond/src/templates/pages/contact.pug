@@ -1,0 +1,13 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Contact'
+
+block content
+    include ../sections/contact/cover
+    include ../sections/contact/plate
+    include ../sections/contact/map
+    include ../sections/contact/form
+
+block append breadcrumbs
+    +breadcrumb('Contact')

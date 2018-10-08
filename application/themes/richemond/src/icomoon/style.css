@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?wqlydh');
+  src:  url('fonts/icomoon.eot?wqlydh#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?wqlydh') format('truetype'),
+    url('fonts/icomoon.woff?wqlydh') format('woff'),
+    url('fonts/icomoon.svg?wqlydh#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-le-jardin:before {
+  content: "\e91a";
+}
+.icon-edit:before {
+  content: "\e919";
+}
+.icon-suitcase:before {
+  content: "\e918";
+}
+.icon-share:before {
+  content: "\e917";
+}
+.icon-car:before {
+  content: "\e914";
+}
+.icon-plane:before {
+  content: "\e915";
+}
+.icon-train:before {
+  content: "\e916";
+}
+.icon-calendar:before {
+  content: "\e913";
+}
+.icon-arrow-pagination:before {
+  content: "\e900";
+}
+.icon-emblem-richemond:before {
+  content: "\e901";
+}
+.icon-arrow-left:before {
+  content: "\e902";
+}
+.icon-arrow-up:before {
+  content: "\e903";
+}
+.icon-book:before {
+  content: "\e904";
+}
+.icon-close:before {
+  content: "\e905";
+}
+.icon-dropdown-arrow:before {
+  content: "\e906";
+}
+.icon-keys:before {
+  content: "\e907";
+}
+.icon-newsletter:before {
+  content: "\e908";
+}
+.icon-phone:before {
+  content: "\e909";
+}
+.icon-search:before {
+  content: "\e90a";
+}
+.icon-facebook:before {
+  content: "\e90b";
+}
+.icon-googleplus:before {
+  content: "\e90c";
+}
+.icon-hosco:before {
+  content: "\e90d";
+}
+.icon-instagram:before {
+  content: "\e90e";
+}
+.icon-linkedin:before {
+  content: "\e90f";
+}
+.icon-pinterest:before {
+  content: "\e910";
+}
+.icon-tripadvisor:before {
+  content: "\e911";
+}
+.icon-twitter:before {
+  content: "\e912";
+}
+.icon-playback-pause:before {
+  content: "\e034";
+}
+.icon-playback-play:before {
+  content: "\e037";
+}
+.icon-playback-stop:before {
+  content: "\e047";
+}

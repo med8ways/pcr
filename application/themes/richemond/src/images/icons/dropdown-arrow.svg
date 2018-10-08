@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="4px" viewBox="0 0 7 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>Dropdown-arrow</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="section-/-Accomodations" transform="translate(-514.000000, -405.000000)" fill="#979BA6">
+            <g id="component-/-Dropdown-items">
+                <g transform="translate(171.000000, 393.000000)">
+                    <g id="Dropdown-item" transform="translate(29.000000, 0.000000)">
+                        <polygon id="Dropdown-arrow" points="314 12 314 12.8422852 317.025139 15.8674246 320.03937 12.8531941 320.03937 12 318.997559 12 317.025139 13.9337123 314.881836 12"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

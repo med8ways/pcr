@@ -1,0 +1,15 @@
+//
+// breadcrumbs
+//
+
+mixin breadcrumb(title, href)
+    if href || href === ""
+        a(href= href)= title
+    else
+        span= title
+
+nav.breadcrumbs
+    .grid-container
+        .grid-x
+            block breadcrumbs
+                +breadcrumb('Back', 'index.html')

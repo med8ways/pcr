@@ -1,0 +1,12 @@
+mixin card_bordered(image, text)
+    a(href='').card-bordered
+        .card-bordered__image
+            img(src=image alt)
+        .user-editable-content.user-editable-content_text-center
+            h3= text
+
+section.section.section_menu-carousel
+    .grid-container
+        .owl-carousel.owl-carousel_offset.owl-carousel_buttons-outside(data-items=2)
+            +card_bordered(require('../../images/seasonal-menu.jpg'), 'Seasonal menu')
+            +card_bordered(require('../../images/market-menu.jpg'), 'Market menu')

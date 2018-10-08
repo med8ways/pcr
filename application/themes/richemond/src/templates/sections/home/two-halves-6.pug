@@ -1,0 +1,29 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_bg-velvet two-halves_small'
+
+block layers
+    .two-halves__layer
+        .grid-container
+            .grid-x
+                .large-7.large-offset-5.cell
+                    a(href='').two-halves__image
+                        +image_srcset(require('../../images/half_contact.jpg?sizes=320w+640w'), 640, '635px')
+
+    .two-halves__layer
+        .grid-container
+            .grid-x
+                .large-6.cell
+                    .two-halves__content.two-halves__content_outline-white
+                        .content-pattern
+                            .line-x.line-x_stick-right
+                            .user-editable-content.user-editable-content_no-p-margins
+                                h4 Contact
+                                h2 How to find us
+                                p Le Richemond
+                                p Rue Adhémar-Fabri 8-10,
+                                p 1201 Geneva, Switzerland
+                                p &nbsp;
+                                p
+                                    a(href="tel:+410227157000") +41 (0)22 715 7000

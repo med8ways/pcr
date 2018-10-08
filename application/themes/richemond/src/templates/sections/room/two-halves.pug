@@ -1,0 +1,40 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_dark two-halves_bg-velvet two-halves_small two-halves_image-left two-halves_shift-up mb-100'
+
+block prepend layers
+    .two-halves__layer.flex-container.align-right
+        .emblem
+            i.icon-emblem-richemond
+
+block layer_fluid
+    .grid-container
+        .grid-x.grid-margin-x
+            .large-8.cell
+                a(href='').two-halves__image.two-halves__image_shift-up
+                    +image_srcset(require('../../images/half_services.jpg?sizes=320w+640w'), 640, '730px')
+
+
+block layer_contained
+    .grid-x.grid-margin-x
+        .large-7.large-offset-5.cell
+            .two-halves__content.pb-50
+                .content-pattern
+                    .line-y.line-y_stick-top
+                    .mb-30
+                        .user-editable-content.user-editable-content_h4-is-black.user-editable-content_text-center
+                            h4 Accomodations
+                            h2 Services
+                    .user-editable-content
+                        p To complete your experience during a stay, indulge in this selection of additional services. Please switch conciergerie below room-service. Replace room-service by dine-in.
+                    .mt-20.services
+                        ul
+                            li
+                                a(href='') Book Spa Treatments
+                            li
+                                a(href='') Book a table Le Jardin
+                            li
+                                a(href='') Conciergerie
+                            li
+                                a(href='') Room-service

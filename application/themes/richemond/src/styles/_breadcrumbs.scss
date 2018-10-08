@@ -1,0 +1,39 @@
+.breadcrumbs {
+  z-index: 1; // to overflow the white thing
+  margin-top: auto;
+  background: $c-blue-dark;
+  @include small-uppercase;
+  font-weight: 400;
+  > .grid-container > .grid-x {
+    border-bottom: 1px solid transparentize($c-white, .9);
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin-top: 0;
+  }
+  @include if-smaller-than(sm) {
+    text-align: center;
+  }
+  a, span {
+    display: inline-block;
+    color: transparentize($c-white, .6);
+    transition: color .25s $easing;
+    &::after {
+      content: '/';
+      margin: 0 1em;
+      color: transparentize($c-white, .6);
+    }
+    &:last-child {
+      color: $c-white;
+      &::after {
+        display: none;
+      }
+    }
+    &:hover {
+      color: $c-white;
+    }
+  }
+  + .footer {
+    padding-top: 70px;
+    margin-top: 0;
+  }
+}

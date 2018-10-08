@@ -1,0 +1,45 @@
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  background: $c-white;
+  .feature {
+    flex: 0 0 33.33%;
+    padding-left: 45px;
+    justify-content: flex-start;
+    margin-top: 0;
+    margin-bottom: 20px;
+    .feature__text {
+      flex: 1;
+    }
+    @include if-smaller-than(md) {
+      flex-basis: 50%;
+    }
+    @include if-smaller-than(sm) {
+      flex-basis: 100%;
+      padding-left: 30px;
+    }
+  }
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__image {
+    width: 25px;
+    display: flex;
+    justify-content: center;
+    margin-right: 15px;
+  }
+  &__text {
+    @include small-uppercase;
+    letter-spacing: 1px;
+  }
+  .user-editable-content > & {
+    margin: 0;
+    + .feature {
+      margin-top: 10px;
+    }
+  }
+}

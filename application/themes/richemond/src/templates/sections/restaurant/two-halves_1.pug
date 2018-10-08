@@ -1,0 +1,32 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_shift-up'
+
+block prepend layers
+    .two-halves__layer.align-self-top
+        .emblem
+            i.icon-le-jardin
+
+block layer_fluid
+    .grid-x.grid-margin-x
+        .large-8.large-offset-4.cell
+            a(href='').two-halves__image
+                +image_srcset(require('../../images/half_vegetarian.jpg?sizes=320w+830w'), 830, '830px')
+
+block layer_contained
+    .grid-x.grid-margin-x
+        .large-7.cell
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-vegetarian.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Vegetarian menu
+                            h2 Made with local and fresh products
+                    .line-x
+                    .user-editable-content
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc at ipsum in nunc viverra bibendum ultricies a odio. Sed tristique et ex scelerisque laoreet. Aliquam eget urna sed enim pulvinar placerat id vel sem. Phasellus porttitor quis eros eget sollicitudin.
+                    .content-pattern__buttons.flex-container.align-center
+                        a.button(href="") View vegetarian menu

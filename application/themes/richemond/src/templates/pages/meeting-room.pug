@@ -1,0 +1,102 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Paul Klee & Galerie Rachmaninoff'
+
+block content
+    include ../sections/meeting-room/top-image
+    include ../sections/meeting-room/plate
+    .mt-60.grid-container
+        .grid-x
+            .medium-8.medium-offset-2
+                .user-editable-content
+                    p A contemporary space ideally suited to product launches, gala dinners and larger conferences, the Paul Klee Salon measures 264 m2 (2,843 ft2) and can host a seated dinner for up to 200 guests, or a cocktail reception for 280 guests. The Paul Klee Salon is accessed via the Galerie Rachmaninoff, a dramatic walkway located beneath a glass ceiling.
+                    ul
+                        li In-suite events in Armleder Suite with a 360° Lake, mountains, old town and garden view (7th floor)
+                        li Panoramic views of the Old Town, Brunswick Gardens
+                        li Social events & weddings
+                        li Chefs & sommelier to create unique menu options
+                        li In-house florist
+                        li All rooms feature natural daylight
+                        li All rooms are interconnecting, located on the ground floor
+                        li Technology: Wi-Fi internet access, dedicated AV support available upon request and audio-visual technology
+    .mt-80.owl-container
+        .owl-carousel(data-nav='true' data-dots='true')
+            img(src=require('../../images/paul-klee.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+            img(src=require('../../images/cover_fountain.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+    .mt-80.grid-container
+        .user-editable-content.user-editable-content_text-center
+            h2 Capacity Chart
+        .mt-40.line-x
+        .mt-40.user-editable-content
+            .user-editable-content.user-editable-content_scrollable
+                table(width='100%' cellspacing='0')
+                    thead
+                        tr
+                            th Room / Style
+                            th Banqueting
+                            th Boardroom
+                            th Cabaret
+                            th Classroom
+                            th Dinner / Dance
+                            th Reception
+                            th Theatre
+                            th U-Shape
+                            th Ft2
+                            th M2
+                    tbody
+                        tr
+                            td Paul Klee
+                            td 100
+                            td 40
+                            td 63
+                            td 60
+                            td 80
+                            td 130
+                            td 100
+                            td 36
+                            td 1538
+                            td 143
+                        tr
+                            td Paul Klee & small gallery
+                            td 150
+                            td 45
+                            td 77
+                            td 90
+                            td 150
+                            td 200
+                            td 200
+                            td 45
+                            td 2843
+                            td 264
+                        tr
+                            td Paul Klee & small gallery
+                            td 200
+                            td —
+                            td —
+                            td —
+                            td 300
+                            td 400
+                            td —
+                            td —
+                            td 3178
+                            td 295
+
+    .mt-100.grid-container
+        .flex-container.align-center.buttons-fullwidth
+            a(href='').button.button_transparent-dark Download floor plans
+            a(href='').button.button_transparent-dark Download banquet menu
+            a(href='').button Make a reservation
+        .mt-30.user-editable-content.user-editable-content_text-center.user-editable-content_do-not-hesitate
+            h4 Do not hesitate to call us
+                a(href='tel:+410227157000')  +41 (0)22 715 7000
+    include ../sections/meeting-room/form
+
+
+block append breadcrumbs
+    +breadcrumb('Meetings & Events', 'events.html')
+    +breadcrumb('Paul Klee & Galerie Rachmaninoff')

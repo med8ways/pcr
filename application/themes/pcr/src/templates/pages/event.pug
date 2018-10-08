@@ -1,0 +1,51 @@
+extends ../layout
+
+block vars
+    - page_title = 'Event'
+
+block content
+    .content__cover.is-static
+        .bg-text.bg-text_center.bg-text_more-visible Event
+        +pic-box(require('../../images/cover/cover-event.jpg'), 'Lamborghini', require('../../images/cover/cover-event@2x.jpg'))(class='image-box_cover image-box_full image-box_top-shadow image-box_lighter-shadow')
+
+    .content__sm.content__article
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-10.cell
+                    .content__box(data-animation="list")
+                        .social-box
+                            a(href='#')
+                                span.icon-twitter
+                            a(href='#')
+                                span.icon-facebook
+                            a(href='#')
+                                span.icon-googleplus
+                        .info-box(data-animation="list")
+                            .info-box__subtitle 27 May 2018 / 8:00
+                            h2 L'Eco-Trophée des Neiges / Amateur Sports Team
+                            .info-list
+                                .info-list__item
+                                    h4 Distance
+                                    span 3 800 km
+                                .info-list__item
+                                    h4 Time
+                                    span 5 hours
+                                .info-list__item
+                                    h4 Complexity
+                                    span Average
+                            p Porsche Cars North America plans to have at least 500 fast chargers available at dealership and highway locations across the U.S. by the end of 2019.
+                            p &nbsp;
+                            p By then, the production car based on the Porsche Mission E electric vehicle concept will be for sale in U.S. dealerships.
+                                | A second EV, based on the Mission E Cross Turismo concept, is planned for deliveries in 2020. The automaker also continues to consider EV variants
+                                | of established models such as the Macan, Panamera and Cayenne, said Klaus Zellmer, CEO of Porsche Cars North America.
+                        +pic-box(require('../../images/event/event-renault.jpg'), 'Renault', require('../../images/event/event-renault@2x.jpg'))(class='image-box_article')
+                        .info-box(data-animation="list")
+                            p You can get a wireless headset that is completely without wires or one that requires a belt pack. The ones that are completely
+                                | wire free are made up of a headset worn on your head that talks to a base unit that is attached to your telephone with no
+                                | wire connections between your headset and your phone. These wireless headset products represent the latest in sophisticated technology
+                                | for communication or listening. Examples of wireless headset models are the Plantronics CS50.
+                        .info-action.info-action_dual
+                            a.btn.btn_left(href='#') Previous event
+                                span
+                            a.btn(href='#') Next event
+                                span

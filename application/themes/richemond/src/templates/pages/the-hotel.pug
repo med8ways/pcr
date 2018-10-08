@@ -1,0 +1,241 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'The Hotel'
+
+block content
+    include ../sections/the-hotel/cover
+    #timeline.pt-100.pb-140
+        .grid-container
+
+            mixin timeline_item(year, content, capital_index, title_index, title_content, type)
+                - var block_class_name = 'timeline-item'
+                if typeof(type) === 'number'
+                    - block_class_name += ' timeline-item_type-' + type
+                div(class= block_class_name)
+                    .timeline-item__year
+                        p= year
+                    .layers
+                        .emblem.emblem_white.align-self-top
+                            i.icon-emblem-richemond
+                        .align-self-stretch.timeline-item__dots
+                            .timeline-item__circle
+                            .dots
+                            if type === 2
+                                .timeline-item__circle
+                        .layer
+                            div(class='grid-x grid-margin-x flex-container align-justify' + (type === 2 ? ' align-bottom': ''))
+                                each i in [0, 1]
+                                    .medium-5.cell
+                                        - var class_name = 'user-editable-content user-editable-content_no-p-margins'
+                                        if i === capital_index
+                                            - class_name += ' user-editable-content_capitalized'
+                                        if i === title_index
+                                            .timeline-item__top
+                                                .user-editable-content
+                                                    h5= title_content
+                                            .mb-30.line-x
+                                        div(class= class_name) !{content[i]}
+                            if type === 2
+                                div(class= 'user-editable-content user-editable-content_no-p-margins') !{content[2]}
+                                .grid-x.grid-margin-x.flex-container.align-justify.align-top
+                                    each i in [3, 4]
+                                        .medium-5.cell
+                                            - var class_name = 'user-editable-content user-editable-content_no-p-margins'
+                                            if i === capital_index
+                                                - class_name += ' user-editable-content_capitalized'
+                                            if i === title_index
+                                                .timeline-item__top
+                                                    .user-editable-content
+                                                        h5= title_content
+                                                .mb-30.line-x
+                                            div(class= class_name) !{content[i]}
+
+
+
+
+            .user-editable-content
+                img(src=require('../../images/timeline-lerichemond.jpg') alt style='margin: 0 auto')
+            .mt-40.user-editable-content.user-editable-content_text-center
+                h1 The Armleder Saga
+
+            .mascotte
+                svg#Layer_1(version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewbox="0 0 215.7 162.6" style="enable-background:new 0 0 215.7 162.6;" xml:space="preserve")
+                    style(type="text/css").
+                        .st0 {
+                            fill: #404A60;
+                        }
+
+                        .st1 {
+                            fill: #FFFFFF;
+                        }
+
+                        .st2 {
+                            fill: none;
+                        }
+                    g.paths
+                        path.st0
+                        path.st0
+                        path.st1
+                        path.st1
+                        path.st2
+                        path.st2
+                        path.st0
+                        path.st0
+
+            +timeline_item(1337, [
+
+                '<p>Nunc vestibulum efficitur efficitur. Integer consectetur ultricies quam ac posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed non turpis cursus, fringilla purus vel, cursus nisi</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Nunc vestibulum efficitur efficitur. Integer consectetur ultricies quam ac posuere. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Sed non turpis cursus, fringilla purus vel, cursus nisi</p>',
+
+                '<p>Pellentesque mattis, sapien pulvinar pretium dictum, nibh tortor tristique ante, sed luctus mauris tortor eu mi. Sed et lorem fermentum, vestibulum lectus eu, pulvinar quam.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Nunc facilisis massa sed felis viverra laoreet. Quisque quis tellus at velit euismod suscipit. Cras a mi vitae nunc tempus placerat. Suspendisse quis turpis sit amet risus dignissim bibendum sit amet et ligula.</p>'
+
+            ], 0, null, null, 1)
+
+            +timeline_item(1847, [
+
+                '<figure style="float:right;"><img src="' + require('../../images/timeline-adolphe-armleder.jpg') + '" alt><figcaption>Adolphe-Rodolphe Armleder (1847 - 1930)</figcaption></figure>',
+
+                '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent varius purus eu feugiat molestie. Pellentesque venenatis et velit et rutrum. Nam ac tempor est. Sed nec massa sem. Curabitur et fermentum enim, et scelerisque turpis. Duis faucibus viverra odio vitae facilisis. Nam quis porttitor nunc, ut molestie nibh. Ut blandit eget quam ac congue. Suspendisse potenti. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Pellentesque eu dapibus tellus, id egestas nisi. Integer cursus turpis sit amet erat blandit hendrerit. Morbi pharetra dui mauris, sed ornare diam porttitor rutrum. Nulla pellentesque elit nec justo imperdiet mattis. Nullam vulputate, felis in faucibus pretium, mi lorem auctor velit, id consectetur tellus nunc ac mi. Maecenas id diam vitae nulla dictum auctor.</p>'
+
+            ], null, 1, 'Adolphe-Rodolphe Armleder')
+
+            +timeline_item(1863, [
+
+                '<p>Quisque a purus a velit pulvinar maximus. Aenean purus metus, viverra eget lectus et, lacinia egestas erat. Praesent a nisl vel nisl vulputate auctor ut vulputate mauris. Morbi sol solliPcitudin eros nisl, id lobortis elit eleifend in. Pellentesque sed consequat orci, sodales mollis ligula. Nulla urna ante, tincidunt vel tortor nec, finibus volutpat ex. Aliquam finibus, ex ut tristique cursus, lacus neque hendrerit neque, vel interdum massa sapien non ligula.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper.</p>',
+
+                '<img src="' + require('../../images/1863.png') + '" alt>'
+
+            ], 0)
+
+            +timeline_item(1901, [
+
+                '<figure><img src="' + require('../../images/timeline-painting.jpg') + '" alt><figcaption>Ferdinand Hodler (1853 - 1918) Paysage Bernois</figcaption></figure>',
+
+                '<p>Nam ut egestas est. Duis faucibus pretium purus ut porttitor. Mauris ut dignissim lacus, pharetra lacinia arcu. Sed diam tortor, laoreet quis justo a, finibus consequat libero. Etiam utfringilla neque. In ut quam elit. Pellentesque id lacus tellus. Ut sodales sagittis nisi, id efficitur orci dignissim at. Sed consequat diam at neque posuere, in aliquet mauris rutrum.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>'
+
+            ], 1)
+
+            +timeline_item(1906, [
+
+                '<p>sollicitudin eros nisl, id lobortis elit eleifend in. Pellentesque sed consequat orci, sodales mollis ligula. Nulla urna ante, tincidunt vel tortor nec, finibus volutpat ex. Aliquam finibus, ex ut tristique cursus, lacus neque hendrerit neque, vel interdum massa sapien non ligula.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Dollicitudin eros nisl, id lobortis elit eleifend in. Pellentesque sed consequat orci, sodales mollis ligula. Nulla urna ante, tincidunt vel tortor nec, finibus volutpat ex. Aliquam finibus, ex ut tristique cursus, lacus neque hendrerit neque, vel interdum massa sapien non ligula. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh sempe</p>',
+                '<figure><img src="' + require('../../images/timeline-victor-armleder-i.png') + '" alt><figcaption>Victor Armleder I</figcaption></figure>' +
+                '<img src="' + require('../../images/1906.png') + '" alt>'
+
+            ], null, 0, 'Victor Armleder I')
+
+            +timeline_item(1927, [
+
+                '<figure><img src="' + require('../../images/timeline-family.png') + '" alt><figcaption>Suspendisse sit amet purus eu ipsum</figcaption></figure>',
+
+                '<p>Sam ut egestas est. Duis faucibus pretium purus ut porttitor. Mauris ut dignissim lacus, pharetra lacinia arcu. Sed diam tortor, laoreet quis justo a, finibus consequat libero. Etiam ut. Sed elementum sed sapien elementum fermentum. Donec laoreet orci ut pharetra congue. Vestibulum libero quam, fermentum eu placerat ac, venenatis in augue. Nunc feugiat luctus euismod. Nunc vestibulum efficitur efficitur.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>',
+
+            ], 1)
+
+            +timeline_item(1935, [
+
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Dollicitudin eros nisl, id lobortis elit eleifend in. Pellentesque sed consequat orci, sodales mollis ligula. Nulla urna ante, tincidunt vel tortor nec, finibus volutpat ex. Aliquam finibus, ex ut tristique cursus, lacus neque hendrerit neque, vel interdum massa sapien non ligula. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh sempe</p>',
+                '<figure><img src="' + require('../../images/timeline-jean-armleder.jpg') + '" alt><figcaption>Jean Armleder (1916)</figcaption></figure>' +
+                '<img src="' + require('../../images/1935.png') + '" alt>'
+
+            ], null, 0, 'Jean Armleder')
+
+            +timeline_item(1944, [
+
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris tuet tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>',
+
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper.</p>'
+
+            ], 0)
+
+            +timeline_item(1950, [
+
+                '<img src="' + require('../../images/1950.png') + '" alt>',
+
+                '<p>Mraesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>'
+
+            ], 1)
+
+            +timeline_item(1968, [
+
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Dollicitudin eros nisl, id lobortis elit eleifend in. Pellentesque sed consequat orci, sodales mollis ligula. Nulla urna ante, tincidunt vel tortor nec, finibus volutpat ex. Aliquam finibus, ex ut tristique cursus, lacus neque hendrerit neque, vel interdum massa sapien non ligula. </p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh sempe</p>',
+                '<figure><img src="' + require('../../images/timeline-victor-armleder-ii.jpg') + '" alt><figcaption>Victor Armleder II</figcaption></figure>' +
+                '<img src="' + require('../../images/1968.png') + '" alt>'
+
+            ], null, 0, 'Victor Armleder II')
+
+            +timeline_item(1970, [
+
+                '<img src="' + require('../../images/1970.png') + '" alt>',
+
+                '<p>Craesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>'
+
+            ], 1)
+
+            +timeline_item(1977, [
+
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>',
+
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper. </p>',
+
+                '<img src="' + require('../../images/timeline-bar.jpg') + '" alt>',
+
+                '<p>Praesent ornare dolor et velit vestibulum, a pretium turpis tempor. Proin iaculis tempor risus. Suspendisse sit amet purus eu ipsum convallis tincidunt sed eget libero. Mauris turpis felis, consectetur et tincidunt eget, sollicitudin vitae metus. Aliquam porttitor elit nec velit auctor varius eu eget felis. Curabitur eget justo non erat ultrices pellentesque in nec tortor. Integer vel risus auctor, viverra nisi ut, porttitor massa.</p>' +
+                '<p>&nbsp;</p>' +
+                '<p>Morbi egestas rutrum tellus, pellentesque convallis sapien blandit et. Phasellus posuere turpis ut orci volutpat, et fringilla nibh eleifend. Donec sed semper mauris. Curabitur enim lorem, varius ac metus sit amet, ultrices dictum leo. Aliquam sed lorem ac erat pellentesque bibendum non vitae purus. Donec dictum ex nec mi pulvinar, et tincidunt nibh semper.</p>',
+
+                '<figure><img src="' + require('../../images/timeline-stephane.jpg') + '" alt><figcaption>Victor Armleder II</figcaption></figure>' +
+                '<img src="' + require('../../images/timeline-sketch-ii.png') + '" alt>'
+
+            ], null, 0, 'John Armleder', 2)
+
+
+block append breadcrumbs
+    +breadcrumb('The Hotel')

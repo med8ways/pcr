@@ -1,0 +1,208 @@
+@mixin if-smaller-than($breakpoint-name) {
+  @if map-has-key($breakpoints, $breakpoint-name) {
+    @media (max-width: #{map-get($breakpoints, $breakpoint-name)}) {
+      @content;
+    }
+  }
+}
+
+@mixin if-bigger-than($breakpoint-name) {
+  @if map-has-key($breakpoints, $breakpoint-name) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint-name)}) {
+      @content;
+    }
+  }
+}
+
+@mixin if-lower-than($breakpoint-name) {
+  @if map-has-key($breakpointsVertical, $breakpoint-name) {
+    @media (max-height: #{map-get($breakpointsVertical, $breakpoint-name)}) {
+      @content;
+    }
+  }
+}
+
+@mixin selection($bg, $text: null) {
+  ::selection {
+    background: $bg;
+    @if $text {
+      color: $text;
+    }
+  }
+}
+
+@mixin justify {
+  text-align: justify;
+  .text-center & {
+    text-align: center;
+  }
+}
+
+@mixin smooth {
+  transition: .35s;
+}
+
+@mixin covers-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin heading {
+  font-family: $f-prata;
+  font-weight: 400;
+}
+
+@mixin h1 {
+  @include heading;
+  font-size: 50px;
+  line-height: 1.6em;
+  @include if-smaller-than(sm) {
+    font-size: 38px;
+  }
+}
+
+@mixin h2 {
+  @include heading;
+  font-size: 40px;
+  line-height: 1.35em;
+  @include if-smaller-than(sm) {
+    font-size: 30px;
+  }
+}
+
+@mixin h3 {
+  @include heading;
+  font-size: 20px;
+  line-height: 1.35em;
+}
+
+@mixin h5 {
+  @include heading;
+  font-size: 28px;
+  line-height: 1.9em;
+  @include if-smaller-than(sm) {
+    font-size: 21px;
+  }
+}
+
+@mixin small-uppercase {
+  font-family: $f-muli;
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 2.8em;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+@mixin regular-text {
+  font-size: 14px;
+  line-height: 2em;
+}
+
+@mixin layers {
+  display: -ms-grid;
+  display: grid;
+  grid-template-areas: 'layers';
+  -ms-grid-columns: 100%;
+  -ms-grid-rows: 100%;
+  grid-template-columns: 100%;
+  -ms-flex-align: center;
+  align-items: center;
+  > * {
+    grid-area: layers;
+  }
+}
+
+@mixin image-cover {
+  overflow: hidden;
+  display: flex;
+  > img, > video {
+    flex: 1 0 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin circle($size) {
+  display: block;
+  width: $size;
+  height: $size;
+  line-height: $size;
+  border-radius: .5 * $size;
+  text-align: center;
+}
+
+@mixin square {
+  display: block;
+  position: relative;
+  height: 0;
+  padding-bottom: 100%;
+  overflow: hidden;
+}
+
+@mixin image-white-frame {
+  > img {
+    outline: 1px solid transparentize($c-white, .5);
+    outline-offset: -15px;
+    @include if-smaller-than(sm) {
+      outline: none;
+    }
+  }
+}
+
+@mixin shadow {
+  box-shadow: 0 30px 30px -20px transparentize(#b6bcd7, .5);
+}
+
+@mixin buttons-fullwidth($breadpoint: sm) {
+  @include if-smaller-than($breadpoint) {
+    flex-wrap: wrap;
+    .button {
+      flex: 1 0 100%;
+      padding-left: 25px;
+      padding-right: 25px;
+      + .button {
+        margin-left: 0;
+        margin-top: 15px;
+      }
+    }
+  }
+}
+
+@mixin clipable {
+  display: none;
+  transition: clip-path $easing 1.5s;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  &.opened {
+    display: flex;
+  }
+  &.clipped {
+    transition-timing-function: cubic-bezier(0.19, 1, 0.22, 1);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+@mixin links-hover-underline {
+  position: relative;
+  &::after {
+    position: absolute;
+    left: 4px;
+    right: 4px;
+    bottom: 0;
+    height: 4px;
+    z-index: -1;
+    content: '';
+    transform: scaleX(0);
+    transition: transform .25s $easing;
+    transform-origin: right center;
+    background: $c-accent;
+    pointer-events: none;
+  }
+  &:hover::after {
+    transform-origin: left center;
+    transform: scaleX(1);
+    transition-delay: .1s;
+  }
+}

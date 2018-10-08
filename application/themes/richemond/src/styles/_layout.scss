@@ -1,0 +1,34 @@
+.scroller {
+  position: relative;
+  z-index: 1; // always under header
+  height: 100vh;
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  .mobile & {
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+}
+
+.layout {
+  position: relative;
+  z-index: 1; // to allow z-index -1 for parallaxing stuff
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  overflow: hidden;
+  padding-top: $header-height + 2 * $header-offset;
+  background: $c-gray-light;
+  > .cover:first-child {
+    margin-top: -$header-height - 2 * $header-offset;
+  }
+  @include if-smaller-than(sm) {
+    padding-top: $header-height;
+    > .cover:first-child {
+      margin-top: -$header-height;
+    }
+  }
+}

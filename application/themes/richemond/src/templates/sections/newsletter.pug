@@ -1,0 +1,10 @@
+- var classes = 'newsletter'
+
+block vars
+
+form(class= classes action='')
+    input.newsletter__input#newsletter-email(type='email' name='newsletter-email' placeholder='Enter your email')
+    label.newsletter__label(for='newsletter-email')
+        i.icon-newsletter
+    button.newsletter__button(type='submit')
+        i.icon-arrow-left

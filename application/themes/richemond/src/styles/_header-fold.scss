@@ -1,0 +1,110 @@
+.header-fold {
+  @include clipable;
+  padding: 60px 0;
+  margin-top: 10px;
+  background: $c-blue-dark;
+  overflow: hidden;
+  overflow-y: auto;
+  justify-content: flex-start;
+  @include if-smaller-than(sm) {
+    margin-top: 0;
+    padding: 0 0 30px;
+  }
+  @include if-lower-than(sm) {
+    padding: 15px 0;
+  }
+  a {
+    color: $c-white;
+    transition: color .2s $easing;
+  }
+  a:hover {
+    color: $c-white;
+  }
+  &__top {
+    padding: 50px 0;
+  }
+  &__nav {
+    transform: translateZ(0);
+    ul {
+      transform: translateZ(0);
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -50px;
+      width: 100%;
+    }
+    li {
+      @include h3;
+      align-self: flex-start;
+      margin-top: 50px;
+      list-style: none;
+      flex: 0 0 33.33%;
+      width: 33.33%;
+      text-align: center;
+      overflow: hidden;
+      @include if-smaller-than(sm) {
+        flex-basis: 100%;
+        padding: 0;
+      }
+    }
+    a {
+      padding: 0 15px;
+      @include links-hover-underline;
+      &::after {
+        left: 19px;
+        right: 19px;
+      }
+    }
+  }
+  &__bottom {
+    border-top: 1px solid transparentize($c-white, .8);
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__social {
+    margin-top: 30px;
+  }
+  .emblem {
+    -ms-grid-column-align: center;
+    justify-self: center;
+    color: transparentize($c-white, .97);
+    font-size: 363px;
+  }
+  .lang-switcher {
+    margin-left: 0;
+    height: auto;
+    margin-bottom: 45px;
+    ul {
+      flex-direction: row;
+      justify-content: center;
+      margin-left: -30px;
+    }
+    li {
+      @include h3;
+      font-size: 14px;
+      opacity: 1;
+      transform: none;
+      margin-left: 30px;
+      pointer-events: auto;
+      &.active {
+        opacity: .5;
+        pointer-events: none;
+      }
+    }
+  }
+  &__nav, &__social {
+    a {
+      display: inline-block;
+      transition: color .2s $easing,
+      transform 1.5s cubic-bezier(.19, 1, .22, 1);
+      transform: translateY(100%) translateZ(0);
+    }
+  }
+  &__social {
+    overflow: hidden;
+    a {
+      transition-duration: .5s;
+    }
+  }
+}

@@ -1,0 +1,58 @@
+
+include mixins
+
+- var site_name = 'Le Richemond'
+- var page_title = ''
+- var script_googlemaps = false
+- var is_homepage = false
+- var is_coming_soon_page = false
+
+block layout_vars
+
+doctype html
+html(lang='en')
+    head
+        meta(charset='UTF-8')
+        meta(
+        name='viewport'
+        content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0'
+        )
+        meta(
+        http-equiv='X-UA-Compatible'
+        content='ie=edge'
+        )
+        title= `${page_title ? `${page_title} - ` : ''}${site_name}`
+        script(src='/cookiesbar/cookiesbar.js')
+        script
+            | tarteaucitron.init({
+            |     "hashtag": "#tarteaucitron", /* Ouverture automatique du panel avec le hashtag */
+            |     "highPrivacy": false, /* désactiver le consentement implicite (en naviguant) ? */
+            |     "orientation": "bottom", /* le bandeau doit être en haut (top) ou en bas (bottom) ? */
+            |     "adblocker": false, /* Afficher un message si un adblocker est détecté */
+            |     "showAlertSmall": true, /* afficher le petit bandeau en bas à droite ? */
+            |     "cookieslist": false, /* Afficher la liste des cookies installés ? */
+            |     "removeCredit": true /* supprimer le lien vers la source ? */
+            | })
+
+    body
+        div(class= is_homepage
+            ? 'ccm-page page-template-full'
+            : is_coming_soon_page
+                ? 'ccm-page coming-soon page-template-full'
+                : 'ccm-page')
+            .defs !{require('../../images/inline/emblem-richemond.svg')}
+                | !{require('../../images/inline/emblem-jardin.svg')}
+            include sections/header
+            .scroller
+                main.layout
+                    block content
+                    if !is_homepage && !is_coming_soon_page
+                        include sections/breadcrumbs
+                    if !is_coming_soon_page
+                        include sections/footer
+
+        script(
+        src='https://code.jquery.com/jquery-1.12.4.min.js'
+        integrity='sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ='
+        crossorigin='anonymous'
+        )

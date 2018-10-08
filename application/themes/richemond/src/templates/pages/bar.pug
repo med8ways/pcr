@@ -1,0 +1,19 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Le Bar'
+
+block content
+    include ../sections/bar/cover
+    include ../sections/bar/intro
+    .mt-40.owl-container#slider-section
+        .owl-carousel
+            img(src=require('../../images/wine.jpg') alt)
+            img(src=require('../../images/dessert.jpg') alt)
+            img(src=require('../../images/cailler.jpg') alt)
+            img(src=require('../../images/air-balloon.jpg') alt)
+    include ../sections/bar/form
+    include ../sections/bar/contact
+
+block append breadcrumbs
+    +breadcrumb('Le Bar')

@@ -1,0 +1,50 @@
+nav.tabs-toggles.collapsed
+    ul
+        li All
+        li(data-tab='rooms') Rooms
+        li(data-tab='signature-suites') Signature Suites
+        li(data-tab='suites') Suites
+section.tabs.mt-100.mb-50
+    .grid-container
+        .grid-x.grid-margin-x
+            .small-6.cell.sizer
+            +card(
+            'From <span class="black">CHF 705*</span>',
+            'Executive Lake View Room',
+            'Experience five-star travel at its finest when you stay in a 1st floor Executive Lake View Room at Le Richemond. Decorated …',
+            require('../../images/rooms_1.jpg'),
+            true,
+            {'data-tabs': 'rooms,suites'}
+            )
+            +card(
+            'From <span class="black">CHF 605*</span>',
+            'Executive Room',
+            'The choice of business and leisure travellers who know where to stay in Geneva, the Executive Room combines contemporary …',
+            require('../../images/rooms_2.jpg'),
+            true,
+            {'data-tabs': 'signature-suites,suites'}
+            )
+            +card(
+            'From <span class="black">CHF 495*</span>',
+            'Superior Room',
+            'Experience Le Richemond from the comfort of a Superior Room, a highlight of five-star travel in Geneva. Decorated in a conte…',
+            require('../../images/rooms_3.jpg'),
+            true,
+            {'data-tabs': 'rooms,suites'}
+            )
+            +card(
+            'From <span class="black">CHF 578*</span>',
+            'Deluxe Room',
+            'Relax in a Deluxe Room and experience Le Richemond, one of the finest luxury hotels in Geneva. ',
+            require('../../images/rooms_4.jpg'),
+            true,
+            {'data-tabs': 'signature-suites,rooms'}
+            )
+            +card(
+            'From <span class="black">CHF 795*</span>',
+            'Premium Lake View Room',
+            'Experience five-star travel at its finest when you stay in a Premium Lake View room at Le Richemond. ',
+            require('../../images/rooms_5.jpg'),
+            true,
+            {'data-tabs': 'rooms,suites'}
+            )

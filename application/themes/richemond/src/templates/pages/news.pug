@@ -1,0 +1,71 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'News'
+
+block content
+    include ../sections/news/top-block
+    section.news
+        .grid-container
+            .grid-x
+                .large-10.large-offset-1.cell
+                    .news-grid
+                        .grid-x.grid-margin-x
+                            +card(
+                            'Aug 20, 2017',
+                            'Ten of the best things in Geneva',
+                            'Geneva is known for its love of the finer things in life and enjoys a picturesque location on the shores of Lake Geneva.',
+                            require('../../images/news-full_1.jpg'),
+                            null,
+                            null,
+                            'article.html'
+                            )
+                            +card(
+                            'Jul 21, 2017',
+                            'Your Geneva Festival guide',
+                            'Whether you’re a foodie, culture vulture or music enthusiast, there’s something for everyone at the Geneva Festival. Dubbed the highlight of the Geneva calendar, …',
+                            require('../../images/news-full_2.jpg'),
+                            null,
+                            null,
+                            'article.html'
+                            )
+                            +card(
+                            'Jul 14, 2017',
+                            'Summer in Geneva',
+                            'With the azure waters of Lake Geneva set against a dramatic backdrop of the Alps, Geneva has a year-round appeal, but it’s in the summer that the city truly blossoms.',
+                            require('../../images/news-full_3.jpg'),
+                            null,
+                            null,
+                            'article.html'
+                            )
+                            +card(
+                            'Nov 28, 2016',
+                            'Yule cake event at Le Richemond',
+                            'Every year Geneva’s finest pastry chefs meet to present their yule cakes, and this year it was Le Richemond’s turn to host this prestigious event. Guests gathered in …',
+                            require('../../images/news-full_4.jpg'),
+                            null,
+                            null,
+                            'article.html'
+                            )
+                            +card(
+                            'Aug 20, 2016',
+                            'Be our guest and fully experience Geneva',
+                            'It has been an incredible week, full of discoveries and experiences! Le Richemond and Geneva Tourism …',
+                            require('../../images/news-full_5.jpg'),
+                            null,
+                            null,
+                            'article.html'
+                            )
+                            +card(
+                            'Aug 25, 2016',
+                            'Le Richemond running guide',
+                            'Situated on the beautiful Lake Geneva, here’s a picturesque route for runners staying at Le Richemond. 3.4-mile route (5.5 km) Starting from the hotel, this ...',
+                            require('../../images/news-full_6.jpg'),
+                            null,
+                            null,
+                            'article.html'
+                            )
+                    include ../sections/pagination
+
+block append breadcrumbs
+    +breadcrumb('News')

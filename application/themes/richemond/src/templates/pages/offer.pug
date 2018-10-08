@@ -1,0 +1,57 @@
+extends ../layout
+
+block layout_vars
+    - page_title = '4 Nights for the price of 3'
+
+block content
+    include ../sections/offer/top-image
+    include ../sections/offer/plate
+    .mt-60.grid-container
+            .grid-x
+                .medium-8.medium-offset-2
+                    .user-editable-content
+                        p Book a room or suite at Le Richemond for four or more consecutive nights and the fourth night is complimentary. Discover the charms of beautiful Geneva with a luxury stay at Le Richemond, perfectly positioned on the shores of Lake Geneva. As a special treat, when you book a stay of four or more consecutive nights, your fourth night will be complimentary.
+                        p &nbsp;
+                        p
+                            b 4 Nights for the Price of 3 includes:
+                        ul
+                            li Luxury accommodation for two
+                            li Complimentary Wi-Fi
+                        p &nbsp;
+                        p
+                            b Rates:
+                        ul
+                            li Superior Room from CHF 372
+    .mt-90.owl-container
+        .owl-carousel(data-nav='true' data-dots='true')
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+            img(src=require('../../images/cover_fountain.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+            img(src=require('../../images/cover_fountain.jpg') alt)
+    include ../sections/offer/form
+    .mb-100.grid-container
+        .grid-x.grid-margin-x
+            .medium-6.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    h3 Terms & Conditions
+                    ul
+                        li This offer is subject to availability
+                        li Rates are based on single or double occupancy per room, per night
+                        li The rate includes service and VAT
+                        li A city tax of CHF 4.75 per person per night additional
+                        li This offer cannot be combined with any other offers or promotions
+                        li The cost of ‘ A magic moment for two’ spa experience and ‘Romantic dinner’ is in addition to the ‘Romantic Break’ offer or can be booked alone
+            .medium-6.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    h3 Alternatively contact us
+                    p
+                        a(href='tel:+410227157000') +41 (0)22 715 7000
+                    p
+                        a(href='mailto:reservations.@lerichemond.com') reservations.@lerichemond.com
+
+
+block append breadcrumbs
+    +breadcrumb('Offers', 'offers.html')
+    +breadcrumb('4 Nights for the price of 3')

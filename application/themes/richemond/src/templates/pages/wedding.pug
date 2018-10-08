@@ -1,0 +1,47 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Your wedding at Le Richemond'
+
+block content
+    include ../sections/wedding/top-image
+    include ../sections/wedding/plate
+    .mt-60.grid-container
+        .grid-x
+            .medium-8.medium-offset-2
+                .user-editable-content.user-editable-content_no-p-margins
+                    p Your wedding day is one of the most important days in your lifetime, a special time to be shared with family and friends.
+                    p &nbsp;
+                    p Le Richemond provides a stylish venue to tie the knot or celebrate your marriage, where unsurpassed service and attention to detail are our specialties.
+                    p &nbsp;
+                    p We will plan and prepare your day with enthusiasm and professionalism to ensure you have a truly memorable occasion.
+                    p &nbsp;
+                    p We will appoint a Wedding Co-ordinator to guide you through every aspect of your day, and can assist you with everything from stationers and chauffeurs, to flowers and dress designers.
+                    p &nbsp;
+                    p Our team would be delighted to meet you and discuss your plans with you.
+    .mt-90.owl-container
+        .owl-carousel(data-nav='true' data-dots='true')
+            img(src=require('../../images/setout.jpg') alt)
+            img(src=require('../../images/wine.jpg') alt)
+            img(src=require('../../images/dessert.jpg') alt)
+            img(src=require('../../images/party.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+    .mt-70.mb-100.grid-container
+        .grid-x.grid-margin-x
+            .medium-4.medium-offset-2.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    h3 Our Address
+                    p Rue Adhémar-Fabri 8-10,
+                    p 1201 Geneva, Switzerland
+            .medium-6.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    h3 Our meetings and events team
+                    p
+                        a(href='mailto:info.meetings-events@lerichemond.com') info.meetings-events@lerichemond.com
+                    p
+                        a(href='tel:+410227157627') +41 (0)22 715 7627
+
+
+block append breadcrumbs
+    +breadcrumb('Meetings & Events', 'events.html')
+    +breadcrumb('Your wedding at Le Richemond')

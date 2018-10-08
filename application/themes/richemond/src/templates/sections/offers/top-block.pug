@@ -1,0 +1,22 @@
+extends ../top-block
+
+block vars
+    - classes += ' mb-60'
+    - grid_classes = 'medium-6 medium-offset-3 cell'
+
+block block_content
+    h4 Offers
+    h1 Special Offers and Promotions with
+
+block append container
+    .grid-x
+        .small-10.small-offset-1
+            .mt-65.tags
+                a.active(href='') All
+                a(href='') Breakfast included
+                a(href='') Online exclusive
+                a(href='') Family stays
+                a(href='') Complimentary credit
+                a(href='') Complimentary room upgrade
+                a(href='') 4 nights for the price of 3
+                a(href='') Complimentary transfer

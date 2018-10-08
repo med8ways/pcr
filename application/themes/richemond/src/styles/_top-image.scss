@@ -1,0 +1,18 @@
+.top-image {
+  @include image-white-frame;
+  margin: 20px auto -90px;
+  max-width: 1280px;
+  padding: 0 20px;
+  @include if-smaller-than(md) {
+    @media (min-aspect-ratio: 3 / 2) {
+      margin-bottom: -25%;
+    }
+  }
+  @include if-smaller-than(sm) {
+    margin: 0 0 -30px;
+    padding: 0;
+    @media (min-aspect-ratio: 1 / 1) {
+      margin-bottom: -33%;
+    }
+  }
+}

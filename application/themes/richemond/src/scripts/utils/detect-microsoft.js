@@ -1,0 +1,1 @@
+export default document.documentMode || /Edge/.test(navigator.userAgent);

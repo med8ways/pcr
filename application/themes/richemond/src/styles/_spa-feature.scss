@@ -1,0 +1,25 @@
+.spa-feature {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  &__image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+    border: 1px solid transparentize($c-gray-dark, .7);
+    border-radius: 5px;
+  }
+  &__text {
+    @include small-uppercase;
+    line-height: 2.2em;
+    color: $c-blue;
+    text-align: center;
+    width: 190px;
+    max-width: 100%;
+  }
+}

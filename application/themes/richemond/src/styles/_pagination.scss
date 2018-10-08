@@ -1,0 +1,53 @@
+.pagination {
+  margin-top: 50px;
+  margin-bottom: 100px;
+  display: flex;
+  justify-content: center;
+  @include h3;
+  li {
+    list-style: none;
+    @include if-smaller-than(sm) {
+      display: none;
+    }
+    &.active {
+      pointer-events: none;
+      background: $c-white;
+      span {
+        color: $c-blue-dark;
+      }
+    }
+    &.prev, &.next {
+      border: 1px solid transparentize($c-gray-dark, .7);
+      @include if-smaller-than(sm) {
+        display: block;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+      a, span {
+        &::before {
+          content: '\e900';
+          font-family: 'icomoon';
+          font-size: 10px;
+          display: block;
+          margin-top: -3px;
+        }
+      }
+      span {
+        color: $c-blue-dark;
+      }
+    }
+    &.prev {
+      transform: scaleX(-1);
+    }
+  }
+  a, span {
+    display: block;
+    width: 65px;
+    line-height: 62px;
+    padding-top: 3px;
+    text-align: center;
+  }
+  span {
+    color: $c-gray-dark;
+  }
+}

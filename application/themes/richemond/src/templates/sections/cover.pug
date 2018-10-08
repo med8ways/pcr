@@ -1,0 +1,18 @@
+
+- var image
+- var video
+- var scroll = false
+block vars
+
+section.cover
+    block layers
+        if image
+            .cover__image
+                +image_srcset(image, null, '100vw')
+        if video
+            .cover__video
+                video(src=video)
+        if scroll
+            .scroll
+                .scroll__line
+                button.scroll__button Scroll

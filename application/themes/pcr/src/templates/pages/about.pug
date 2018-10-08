@@ -1,0 +1,61 @@
+extends ../layout
+
+block vars
+    - page_title = 'About'
+
+block content
+    .content__cover.content__cover_about
+        +additional-content('Prestige car', 'Prestige')(class='bg-text_right cover-bg-text')
+        +pic-box(require('@/images/cover/cover-about.jpg'), 'office', require('@/images/cover/cover-about@2x.jpg'))(class='image-box_cover image-box_top-shadow image-box_half-transparent' data-animation="parallax")
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-8.cell
+                    +cover-content('Our history', 'Prestige Car Romand: Sur Nous')(class='info-box_cover')
+
+    .content__about
+        .grid-container
+            .content__history
+                +pic-box(require('@/images/about/2013.png'), 'history pic', require('@/images/about/2013@2x.png'))
+                .bg-text.bg-text_center.bg-text_lighter(data-animation="parallax") 2013
+                .lines.lines_left !{require('@/images/inline/lines.svg')}
+                .grid-x.grid-margin-x
+                    .large-offset-1.large-10.cell
+                        .info-wrap
+                            .line(data-animation="line")
+                            .info-box(data-animation="stagger-horizontal")
+                                h2 2013
+                                p Le garage Prestige Car Romand a ouvert ses portes en mars 2013 dans cette magnifique ville
+                                    | Chablaisienne « Aigle ». Trois ans après notre inauguration, nous avons entrepris d’agrandir
+                                    | nos locaux afin de répondre au mieux à vos besoins.
+            .content__history.content__history_left
+                +pic-box(require('@/images/about/2016.png'), 'history pic', require('@/images/about/2016@2x.png'))
+                .bg-text.bg-text_center.bg-text_lighter(data-animation="parallax") 2016
+                .lines.lines_right !{require('@/images/inline/lines.svg')}
+                .grid-x.grid-margin-x
+                    .large-offset-1.large-10.cell
+                        .info-wrap.info-wrap_right
+                            .line(data-animation="line")
+                            .info-box(data-animation="stagger-horizontal")
+                                h2 2016
+                                p Nous vous accueillions depuis le 31 octobre 2016 dans un tout nouveau showroom
+                                    | sur 3 niveaux qui totalise 1’800m2 où trônent plus de 60 de véhicules prestigieux sur
+                                    | les deux premiers niveaux et plus de 40 en extérieur. Au 3ème et dernier niveau, nous
+                                    | vous proposons un service de gardiennage, surveillé par un système de sécurité High-tech.
+            .content__history
+                +pic-box(require('@/images/about/2017.png'), 'history pic', require('@/images/about/2017@2x.png'))
+                .bg-text.bg-text_center.bg-text_lighter(data-animation="parallax") 2017
+                .lines.lines_left !{require('@/images/inline/lines.svg')}
+                .grid-x.grid-margin-x
+                    .large-offset-1.large-10.cell
+                        .info-wrap
+                            .line(data-animation="line")
+                            .info-box(data-animation="stagger-horizontal")
+                                h2 2017
+                                p Though the Strayhorn 1.5 version is the favorite for many, it is not as stable or as
+                                    | secure as the newest version 2.0.3. The best part of the new version is the security
+                                    | patch; the new “nonce” security key reduces the chances of a malicious hacker finding
+                                    | a way into your admin panel. Besides the security patch, though, several minor bugs
+                                    | have been squashed with this version.
+
+
+    include ../subscribe

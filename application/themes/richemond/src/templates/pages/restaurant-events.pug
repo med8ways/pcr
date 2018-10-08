@@ -1,0 +1,39 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Restaurant & Bars Events'
+
+block content
+    include ../sections/restaurant-events/top-block
+    .mb-70.grid-container
+        .grid-x.grid-margin-x
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    'All Year',
+                    'Market menu',
+                    '<p>Every weekday for lunch.</p><p>Three-course menu (served in an hour on request): CHF 49 including coffee</p>',
+                    require('../../images/card-fruits.jpg'),
+                    'Discover our menus'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    'January, May',
+                    'Le Spa by Sisley weekend offer',
+                    '<p>On Saturday, January 28 and Sunday,</p><p>January 29 exclusively</p>',
+                    require('../../images/card-spa.jpg'),
+                    'Discover our menus'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    'January',
+                    'Festive season at Le Jardin',
+                    "<p>Christmas Eve & New Year's Eve</p><p>For more information, contact our restaurant:</p><p>&nbsp;</p><p><a href='tel:+410227157100'>+41 (0)22 715 7100</a></p><p><a href='mailto:LeJardin.LRG@dorchestercollection.com'>LeJardin.LRG@dorchestercollection.com</a></p>",
+                    require('../../images/card-spa.jpg'),
+                    'Discover our menus'
+                    )
+
+block append breadcrumbs
+    +breadcrumb('Restaurant & bars events')

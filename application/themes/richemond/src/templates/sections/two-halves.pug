@@ -1,0 +1,25 @@
+- var image
+- var classes = "two-halves"
+
+block vars
+
+section(class= classes)
+
+    block layers
+
+        .two-halves__layer
+            block layer_fluid
+                .grid-x
+                    .large-6.large-offset-6.cell
+                        a(href='').two-halves__image
+                            block image
+                                +image_srcset(image, 640)
+
+        .two-halves__layer.two-halves__layer_content
+            .grid-container
+                block layer_contained
+                    .grid-x
+                        .large-6.cell
+                            .two-halves__content
+                                .content-pattern
+                                    block content

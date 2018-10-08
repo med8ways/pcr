@@ -1,0 +1,54 @@
+extends ../layout
+
+block vars
+    - page_title = 'News'
+
+block content
+    .content__cover.content__md
+        +additional-content('Nouveautes', 'Prestige')(class='bg-text_left cover-bg-text')
+        +pic-box(require('@/images/cover/cover-news.jpg'), 'Lamborghini', require('@/images/cover/cover-news@2x.jpg'))(class='image-box_cover image-box_top-shadow image-box_light-transparent' data-animation="parallax")
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-8.cell
+                    +cover-content('Soyez conscient des mises à jour', 'Nouveautes', 'With MySpace becoming more popular every day, there is the constant need to be different. There are millions')(class='info-box_cover')
+
+    .content__md
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-10.cell
+                    .news-list(data-animation="list")
+                        +news-item(require('@/images/news/news-pic-1.jpg'), 'car', require('@/images/news/news-pic-1@2x.jpg'), '27 May 2018', 'Myspace Layouts The Missing Element',
+                            'Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment…',
+                            'article.html', 'Read')
+                        +news-item(require('@/images/news/news-pic-2.jpg'), 'Porsche', require('@/images/news/news-pic-2@2x.jpg'), '27 May 2018', 'Myspace Layouts The Missing Element',
+                            'Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment…',
+                            'article.html', 'Read')
+                        +news-item(require('@/images/news/news-pic-3.jpg'), 'Lamborghini', require('@/images/news/news-pic-3@2x.jpg'), '27 May 2018', 'Myspace Layouts The Missing Element',
+                            'Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment…',
+                            'article.html', 'Read')
+                        +news-item(require('@/images/news/news-pic-4.jpg'), 'car', require('@/images/news/news-pic-4@2x.jpg'), '27 May 2018', 'Myspace Layouts The Missing Element',
+                            'Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment…',
+                            'article.html', 'Read')
+                        +news-item(require('@/images/news/news-pic-5.jpg'), 'Mercedes', require('@/images/news/news-pic-5@2x.jpg'), '27 May 2018', 'Myspace Layouts The Missing Element',
+                            'Recently, the US Federal government banned online casinos from operating in America by making it illegal to transfer money to them through any US bank or payment…',
+                            'article.html', 'Read')
+                        ul.pagination
+                            li.prev.disabled
+                                a(href='?page=2')
+                                    span.icon-chevron
+                            li
+                                a(href='?page=1') 1
+                            li
+                                a(href='?page=2') 2
+                            li.active
+                                span 3
+                            li
+                                a(href='?page=4') 4
+                            li.dots
+                                span ...
+                            li
+                                a(href='?page=23') 23
+                            li.next
+                                a(href='?page=4')
+                                    span.icon-chevron
+

@@ -1,0 +1,64 @@
+extends ../form
+
+block top_content
+    h2 Table Reservation
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat turpis vestibulum tortor gravida, at mattis tellus sodales.
+
+block append scripts
+    //
+    //    these scripts should appear on each page with datepicker input
+    //
+
+    //
+    // translation for datepicker widget
+    // list of available properties - https://github.com/fengyuanchen/datepicker#i18n
+    //
+    script
+        | if (!window.config) window.config = {};
+        | if (!window.config.dictionary) window.config.dictionary = {};
+        | window.config.dictionary['fr-FR'] = {
+        |     format: 'dd/mm/yyyy',
+        |     days: ['Dimanche', 'Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi'],
+        |     daysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+        |     daysMin: ['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'],
+        |     weekStart: 1,
+        |     months: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Aout', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+        |     monthsShort: ['Jan', 'Fev', 'Mar', 'Avr', 'Mai', 'Jun', 'Jui', 'Aou', 'Sep', 'Oct', 'Nov', 'Dec']
+        | };
+    //
+    // template for datepicker widget
+    //
+    script#datepicker-template(type="text/html")
+        | <div class="datepicker-container">
+        |   <div class="datepicker-panel" data-view="years picker">
+        |       <ul>
+        |           <li class="datepicker-grow" data-view="years current"></li>
+        |           <li data-view="years prev" class="prev"><i class="icon-arrow-left"></i></li>
+        |           <li data-view="years next" class="next"><i class="icon-arrow-left"></i></li>
+        |       </ul>
+        |       <ul class="datepicker-years" data-view="years"></ul>
+        |   </div>
+        |   <div class="datepicker-panel" data-view="months picker">
+        |       <ul>
+        |           <li class="datepicker-grow" data-view="year current"></li>
+        |           <li data-view="year prev" class="prev"><i class="icon-arrow-left"></i></li>
+        |           <li data-view="year next" class="next"><i class="icon-arrow-left"></i></li>
+        |       </ul>
+        |       <ul class="datepicker-months" data-view="months"></ul>
+        |   </div>
+        |   <div class="datepicker-panel" data-view="days picker">
+        |       <ul>
+        |           <li class="datepicker-grow" data-view="month current"></li>
+        |           <li data-view="month prev" class="prev"><i class="icon-arrow-left"></i></li>
+        |           <li data-view="month next" class="next"><i class="icon-arrow-left"></i></li>
+        |       </ul>
+        |       <ul class="datepicker-week" data-view="week"></ul>
+        |       <ul data-view="days"></ul>
+        |   </div>
+        | </div>
+
+block prepend column_right
+    +input_block('Reservation Date', null, null, 'date')
+    +input_block('Reservation Time', null, ['9:00 Am', '9:30 Am', '10:00 Am', '10:30 Am', '11:00 Am', '11:30 Am', '12:00 Am', '12:30 Am', '1:00 Pm', '1:30 Pm', '2:00 Pm', '2:30 Pm', '3:00 Pm', '3:30 Pm', '4:00 Pm', '4:30 Pm'])
+    +input_block('Number Of Persons', [VALIDATION_TYPES.required], null, 'number')
+    +input_block('Special Requirements', null, null, 'textarea')

@@ -1,0 +1,36 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_dark two-halves_bg-velvet two-halves_small two-halves_image-left two-halves_shift-up'
+
+block prepend layers
+    .two-halves__layer.flex-container.align-right
+        .emblem
+            i.icon-emblem-richemond
+
+block layer_fluid
+    .grid-container
+        .grid-x
+            .large-8.cell
+                a(href='').two-halves__image.two-halves__image_shift-up
+                    +image_srcset(require('../../images/half_offers.jpg?sizes=320w+640w'), 640, '730px')
+
+
+block layer_contained
+    .grid-x
+        .large-7.large-offset-5.cell
+            .two-halves__content
+                .content-pattern
+                    .line-y.line-y_stick-top
+                    .content-pattern__top
+                        .user-editable-content.user-editable-content_h4-is-black
+                            h4 Our offers
+                            h2 Family Time in Geneva
+                    .text-center
+                        .caption-light
+                            h4 17 Sep to 31 Dec
+                            h4 &nbsp;
+                        .user-editable-content
+                            p Book a room or suite at Le Richemond for four or more consecutive nights and the fourth night is complimentary.
+                    .content-pattern__buttons.flex-container.align-center
+                        a.button(href="") Explore More

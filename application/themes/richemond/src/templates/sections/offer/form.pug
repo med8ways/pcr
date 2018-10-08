@@ -1,0 +1,22 @@
+extends ../form
+
+block vars
+    - classes = 'plate plate_contact-form mt-80 mb-80'
+
+block top_content
+    h2 Check availability
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat turpis vestibulum tortor gravida, at mattis tellus sodales.
+
+block prepend column_right
+    +input_block('Offer', null, [
+        '4 Nights for the Price of 3',
+        'Family time in Geneva',
+        'The perfect Geneva experience',
+        'Luxury Spa Break',
+        'Romantic Break',
+        'Guaranteed Lakeview',
+        'Bed and Breakfast',
+        'Geneva on Business'
+    ])
+    +input_block('Please contact me by', null, ['E-mail', 'Phone'])
+    +input_block('Special Requirements', null, null, 'textarea')

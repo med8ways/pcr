@@ -1,0 +1,49 @@
+.coming-soon {
+  .o-70 {
+    &, .caption, .caption a, .social a, h4 {
+      color: transparentize($c-white, .3);
+    }
+  }
+  .o-80 {
+    &, .caption, .caption a, .social a, h4 {
+      color: transparentize($c-white, .2);
+    }
+  }
+  [class^='o-'] {
+    .caption a, .social a {
+      transition: color .2s $easing;
+      &:hover {
+        color: $c-white;
+      }
+    }
+  }
+  .header__black {
+    @include if-smaller-than(sm) {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: auto;
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+  }
+  .header__left {
+    @include if-smaller-than(sm) {
+      display: block;
+      margin-top: 30px;
+    }
+  }
+  .header__center {
+    @include if-smaller-than(sm) {
+      order: -1;
+    }
+  }
+  .header__phone {
+    @include if-smaller-than(md) {
+      display: block;
+    }
+    @include if-smaller-than(sm) {
+      margin-top: 15px;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+extends ../cover
+
+block vars
+    - image = require('../../images/cover_rooms.jpg?sizes=640w+1024w+1400w')
+    - video = require('../../videos/richemond_cut.mp4')
+
+block append layers
+    .cover__overlay
+        .grid-container
+            .grid-x
+                .medium-6.medium-offset-3.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .line-y
+                        .cover__uppertext
+                            p Suites & Rooms
+                        .cover__title
+                            h1 Accomodations
+                        .user-editable-content.user-editable-content_text-center.o-80
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat turpis vestibulum tortor gravida, at mattis tellus sodales.
+                        button.play.icon-playback-play
+                        .user-editable-content.mt-5
+                            h4 Play Video

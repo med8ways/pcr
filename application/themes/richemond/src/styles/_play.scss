@@ -1,0 +1,22 @@
+.play {
+  @include circle(60px);
+  margin-top: 35px;
+  color: $c-white;
+  background: transparentize($c-void, .3) center center no-repeat;
+  @include if-lower-than(md) {
+    margin-top: 15px;
+  }
+  &, & + .mt-5 {
+    display: none;
+  }
+  @include if-smaller-than(sm) {
+    &, & + .mt-5 {
+      display: block;
+    }
+  }
+  @include if-lower-than(xs) {
+    &, & + .mt-5 {
+      display: block;
+    }
+  }
+}

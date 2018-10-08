@@ -1,0 +1,56 @@
+.plate {
+  pointer-events: none;
+  &__white {
+    background: $c-white;
+    padding-left: 10%;
+    padding-right: 10%;
+    pointer-events: auto;
+  }
+  &__content {
+    position: relative;
+  }
+  &__bottom {
+    border-top: 1px solid #dde7e9;
+    padding-top: 40px;
+  }
+  .social {
+    @include if-smaller-than(sm) {
+      margin-top: -5px;
+      margin-bottom: 15px;
+    }
+    // this is shit and cannot be used
+    &, & a {
+      color: $c-gray-dark;
+    }
+  }
+  .flex-container {
+    @include if-smaller-than(sm) {
+      flex-wrap: wrap;
+    }
+  }
+  &_fixed {
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: $c-blue-dark;
+    display: flex;
+    align-items: center;
+    > * {
+      flex: 1 0 100%;
+    }
+  }
+  .top-image + & {
+    .plate__white {
+      min-height: 290px;
+    }
+  }
+  .cover + &.collapsed {
+    @include if-smaller-than(sm) {
+      margin-top: -200px;
+      margin-bottom: 30px;
+    }
+  }
+}

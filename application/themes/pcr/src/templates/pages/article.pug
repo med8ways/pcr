@@ -1,0 +1,84 @@
+extends ../layout
+
+block vars
+    - page_title = 'Article'
+
+block content
+    .content__cover.is-static
+        .bg-text.bg-text_center.bg-text_more-visible Article
+        +pic-box(require('@/images/cover/cover-article.jpg'), 'Lamborghini', require('@/images/cover/cover-article@2x.jpg'))(class='image-box_cover image-box_full image-box_top-shadow')
+
+    .content__sm.content__article
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-10.cell
+                    .content__box(data-animation="list")
+                        .social-box
+                            a(href='#')
+                                span.icon-twitter
+                            a(href='#')
+                                span.icon-facebook
+                            a(href='#')
+                                span.icon-googleplus
+                        .info-box(data-animation="list")
+                            .info-box__subtitle 27 May 2018
+                            h2 Dvd Replication For Dummies 4 Easy Steps To Professional
+                            p Porsche Cars North America plans to have at least 500 fast chargers available at dealership and highway locations across the U.S. by the end of 2019.
+                            p &nbsp;
+                            p By then, the production car based on the Porsche Mission E electric vehicle concept will be for sale in U.S. dealerships.
+                                | A second EV, based on the Mission E Cross Turismo concept, is planned for deliveries in 2020.
+                                | The automaker also continues to consider EV variants of established models such as the Macan,
+                                | Panamera and Cayenne, said Klaus Zellmer, CEO of Porsche Cars North America.
+                            p &nbsp;
+                            p The 800-volt fast chargers will help alleviate any range anxiety that potential buyers of Porsche EVs may feel, Zellmer said.
+                            ul
+                                li will exceed the vehicles
+                                li EV variants of established
+                                li CEO of Porsche Cars
+                                li Dealer Board of Regents
+                                li Those wouldn't have to have
+                            p "If you want to buy that car, you want to know what happens if I go skiing and go further than 300 miles," Zellmer told Automotive News.
+                                | "What do I do? So we need to have answers for that."
+                            p &nbsp;
+                            p Zellmer called the cars' range a psychological barrier, saying 80 to 90 percent of EV owners will charge them at home or work.
+                                | But a cross-country fast-charging network is a necessary solution to concerns about the "unlikely instances" when
+                                | driving distances will exceed the vehicles' 300-mile-plus range, he said.
+                            p &nbsp;
+                            p EV owners will need to be prepared to pay for use of the fast chargers, which promise to replenish the batteries to 80 percent of
+                                | their capacity — enough to drive about 250 miles — in less than 20 minutes.
+                        +pic-box(require('@/images/article/article-porsche.jpg'), 'Porsche', require('@/images/article/article-porsche@2x.jpg'))(class='image-box_article')
+                        .info-box(data-animation="list")
+                            p "We are pretty certain that it's not free of charge," Zellmer said. "It's too early to talk about how exactly that payment
+                                | process for customers will work. There are various opportunities. You could buy a package all included for the car.
+                                | It could be a membership card that you use. We're not quite there yet."
+                            p &nbsp;
+                            p Zellmer said dealerships would have the option to offer free fast charging to their customers if they like the traffic and want to use
+                                | the charging time as a way to engage customers in dealership offerings.
+                            .info-box__selected
+                                p Porsche plans to inform each of its 189 U.S. dealerships in June of the infrastructure investment recommended for each location.
+                                    | A third-party vendor has visited every store over the last six months to evaluate those needs, Zellmer said.
+                                    | He wants dealerships to complete fast-charger installations by the second half of 2019.
+                            p Dealership investment is not yet finalized, but "it's not a minor cost," Zellmer said. "It certainly is six-digit numbers that our dealers will have to take."
+                            p &nbsp;
+                            p &nbsp;
+                            p Dealers are being asked to install at least one fast charger at each location along with a battery buffer that stores electricity from the grid.
+                                | That buffer can then fast charge three cars in a row. The battery buffer option is much cheaper than setting up the system to charge vehicles
+                                | straight from the grid, Zellmer said. Porsche has spent more than $1 million to install six fast chargers that charge directly
+                                | from the grid at its U.S. headquarters in Atlanta, he said.
+                            p &nbsp;
+                            p The automaker is working with three potential partners — ChargePoint, EVgo and Electrify America — to set up the 300-plus nondealership fast chargers.
+                                | Porsche also is considering destination charging at locations such as golf courses and hotels.
+                                | Those wouldn't have to have fast-charging technology, Zellmer said.
+                            p &nbsp;
+                            p Porsche dealers expect to get a road map and a clearer picture of the costs of the charging infrastructure soon, Todd Blue, a member of the
+                                | Porsche Dealer Board of Regents, said recently.
+                            p &nbsp;
+                            p "Nothing will be a surprise to any of the dealers," said Blue, CEO of IndiGO Auto Group, which has Porsche stores in St. Louis, Houston and Rancho Mirage,
+                                | Calif. "Porsche is on this. We'll be ready, and they are getting us ready through a tremendous amount of communications."
+                        .info-action.info-action_dual
+                            a.btn.btn_left(href='#') Previous article
+                                span
+                            a.btn(href='#') Next article
+                                span
+
+

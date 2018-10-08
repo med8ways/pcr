@@ -1,0 +1,48 @@
+footer.footer
+    .grid-container
+        .grid-x.grid-margin-x
+            .large-offset-1.large-10.cell
+                .footer__top
+                    +pic-link('index.html', require('../../images/Logo.png'), 'logo', require('../../images/Logo@2x.png'))(class='logo')
+                    .social-list
+                        +link('#', 'facebook')
+                        +link('#', 'twitter')
+                        +link('#', 'autoscout24')
+                .footer__main
+                    .grid-x.grid-margin-x
+                        .large-3.small-12.cell
+                            ul
+                                li
+                                    +link('about.html', 'About us')
+                                li
+                                    +link('services.html', 'Services')
+                                li
+                                    +link('cars.html', 'Used cars')
+                        .large-3.small-12.cell
+                            ul
+                                li
+                                    +link('event.html', 'Events')
+                                li
+                                    +link('news.html', 'News')
+                                li
+                                    +link('contact.html', 'Contact us')
+                        .large-3.small-12.cell
+                            ul
+                                li
+                                    +link('404.html', 'Help & Support')
+                                li
+                                    +link('privacy.html', 'Privacy Policy')
+                                li
+                                    +link('404.html', 'Terms & Conditions')
+                        .large-3.small-12.cell
+                            .footer__main-contact
+                                ul
+                                    li  Route de Lausanne 16-18
+                                    li  Yvorne, Switzerland
+                                ul
+                                    li
+                                        +link('mailto:jaskolski.thea@darwin.biz', 'jaskolski.thea@darwin.biz')
+                                    li
+                                        +link('tel:155-520-7994', '155-520-7994')
+                .footer__copyright
+                    p &copy; 2018 Prestige Car Romand. #[span All rights reserved.] #[a(href='https://www.8ways.ch/en' title='8 Ways Media Web Design Agency Geneva Google Certified' target='_blank') Designed by 8 Ways Media]

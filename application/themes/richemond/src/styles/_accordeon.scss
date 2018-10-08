@@ -1,0 +1,25 @@
+.accordeon {
+  &__head {
+    position: relative;
+    cursor: pointer;
+  }
+  &__arrow {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    color: $c-gray-dark;
+    font-size: 4px;
+    transform: translateY(-50%) scaleY(1) translateZ(0);
+    pointer-events: none;
+  }
+  &__dropdown {
+    overflow: hidden;
+    transition: height .5s $easing;
+  }
+  &.opened {
+    cursor: default;
+    .accordeon__arrow {
+      transform: translateY(-50%) scaleY(-1) translateZ(0);
+    }
+  }
+}

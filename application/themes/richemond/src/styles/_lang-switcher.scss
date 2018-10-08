@@ -1,0 +1,55 @@
+.lang-switcher {
+  height: 3em;
+  z-index: 2;
+  ul {
+    display: flex;
+    flex-direction: column;
+    margin-left: -.5em;
+    margin-right: -.5em;
+  }
+  li {
+    pointer-events: none;
+    list-style: none;
+    transform: translateY(3em) translateZ(0);
+    line-height: 3em;
+    background: $c-blue-dark;
+    opacity: 0;
+    transition: opacity .3s $easing .3s, transform .3s $easing .3s, max-height .3s $easing;
+    transition-delay: 0;
+    &.active {
+      pointer-events: auto;
+      order: -1;
+      cursor: pointer;
+      transform: none;
+      opacity: 1;
+    }
+  }
+  a {
+    display: block;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  &.opened {
+    li {
+      transform: none;
+      opacity: 1;
+      pointer-events: auto;
+      &:hover {
+        background: $c-accent;
+      }
+      &.active {
+        background: $c-blue-dark;
+        cursor: default;
+        a {
+          pointer-events: none;
+        }
+      }
+      @for $i from 1 through 10 {
+        &:nth-child(#{$i}) {
+          transition-delay: .03 * $i + s;
+        }
+      }
+    }
+  }
+}

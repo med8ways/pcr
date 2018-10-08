@@ -1,0 +1,33 @@
+extends ../plate
+
+block vars
+    - classes += ' collapsed'
+
+block block_content
+    .pt-75.pb-20
+        .line-y.line-y_stick-topleft
+        .user-editable-content
+            h4 Contact
+            h2 Le Richemond
+    .pt-30
+        .grid-x.grid-margin-x
+            .medium-4.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    p
+                        b Address
+                    p Rue Adhémar-Fabri 8-10,
+                    p 1201 Geneva, Switzerland
+            .medium-4.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    p
+                        b Phone
+                    p
+                        a(href='tel:+410227157000') +41 (0)22 715 7000
+            .medium-4.cell
+                .user-editable-content.user-editable-content_no-p-margins
+                    p
+                        b Email
+                    p
+                        a(href='mailto:info@lerichemond.com') info@lerichemond.com
+    .plate__bottom.mt-40.pt-40.pb-55
+        include ../social

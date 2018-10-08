@@ -1,0 +1,104 @@
+.owl-container {
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 65px;
+  padding-right: 65px;
+  @include if-smaller-than(sm) {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+.owl-stage {
+  transition-timing-function: $easing !important;
+}
+
+.owl-dots {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: -15px;
+}
+
+.owl-dot {
+  @include circle(4px);
+  background: $c-gray-dark;
+  opacity: .5;
+  margin-left: 15px;
+  &.active {
+    opacity: 1;
+    @include circle(6px);
+  }
+}
+
+$size: 60px;
+.owl-prev,
+.owl-next {
+  position: absolute;
+  top: 50%;
+  background: transparentize($c-blue-dark, .7);
+  color: $c-white;
+  width: $size;
+  line-height: $size;
+  text-align: center;
+  margin-top: -.5 * $size;
+  transition: background-color .35s $easing;
+  &:hover {
+    background: transparentize($c-blue-dark, .35);
+  }
+}
+
+.owl-prev {
+  left: 0;
+  transform: rotate(-90deg);
+}
+
+.owl-next {
+  right: 0;
+  transform: rotate(90deg);
+}
+
+.owl-carousel {
+  &_offset {
+    .owl-stage-outer {
+      overflow: visible;
+    }
+  }
+  &_buttons-outside {
+    position: static;
+    .owl-prev {
+      left: 30px;
+    }
+    .owl-next {
+      right: 30px;
+    }
+    @include if-smaller-than(sm) {
+      .owl-prev {
+        left: 15px;
+      }
+      .owl-next {
+        right: 15px;
+      }
+    }
+    .owl-nav.disabled {
+      display: block;
+    }
+  }
+  &_scalable {
+    height: 580px;
+    position: relative;
+    .owl-item {
+      z-index: 1;
+      perspective: 1000px;
+      &.center {
+        z-index: 2;
+      }
+    }
+    @include if-smaller-than(md) {
+      height: 510px;
+    }
+  }
+}

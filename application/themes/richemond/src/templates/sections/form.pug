@@ -1,0 +1,98 @@
+- var input_block_count = 0
+- var VALIDATION_TYPES = { required: 0, email: 1, phone: 2 }
+- var classes = 'plate plate_contact-form mt-85 mb-100'
+mixin input_block(label, validation_types, dropdown_items, type)
+    - var input_type = "text"
+    - var classes = "input-block"
+    - var attributes = {}
+    - var input_attributes = {}
+    - var is_textarea = false
+    if !validation_types
+        - validation_types = []
+    if !!dropdown_items
+        - attributes["data-dropdown-items"] = JSON.stringify(dropdown_items).replace(/"/g, "'")
+    for validation_type in validation_types
+        if validation_type === VALIDATION_TYPES.required
+            - input_type = "text"
+            - classes += " input-block_validate-required"
+        else if validation_type === VALIDATION_TYPES.email
+            - input_type = "email"
+            - classes += " input-block_validate-email"
+        else if validation_type === VALIDATION_TYPES.phone
+            - input_type = "tel"
+            - classes += " input-block_validate-phone"
+            - attributes['data-unknown-country'] = 'Unknown Country'
+    if type
+        - attributes["data-type"] = type
+        - classes +=` input-block_${type}`
+    if type === "date"
+        - attributes["data-datepicker-language"] = "fr-FR"
+    else if type != null
+        - input_type = type
+
+    if type === 'number'
+        - input_attributes.min = 1
+
+    div(class= classes)&attributes(attributes)
+        .input-block__label
+            label.label(for=`input-block-${input_block_count}`) !{label}
+        .input-block__input
+            if type === 'textarea'
+                textarea.input(id=`input-block-${input_block_count}` name=`input-block-${input_block_count}`)
+            else
+                input.input(id=`input-block-${input_block_count}` name=`input-block-${input_block_count}` type= input_type autocomplete='off')&attributes(input_attributes)
+        .input-block__error
+    - input_block_count++;
+
+block vars
+
+section(class= classes)#form
+    .grid-container
+        .plate__white
+            .plate__content.pt-80.pb-70
+                .grid-x
+                    .medium-10.medium-offset-1.cell
+                        .user-editable-content.user-editable-content_text-center
+                            block top_content
+                form.contact-form(action='')
+                    block scripts
+                        //
+                        // following translation scripts should be rendered on each page with contact form
+                        // they contain things that can be configured from PHP
+                        //
+                        script
+                            | (function(c) {
+                            |   if (!c) c = window.config = {};
+                            |   c.dictionary = {
+                            |       error_required: "%1 is a required field",
+                            |       error_phone: "please, enter a correct phone no.",
+                            |       error_email: "please, enter a correct email address"
+                            |   };
+                            | })(window.config);
+                    .contact-form__inputs
+                        .grid-x.grid-margin-x
+                            .medium-6.cell
+                                block column_left
+                                    +input_block('Title', null, ['Mr.', 'Mrs.'])
+                                    +input_block('First Name', [VALIDATION_TYPES.required])
+                                    +input_block('Last Name', [VALIDATION_TYPES.required])
+                                    +input_block('Phone Number', [VALIDATION_TYPES.phone])
+                                    +input_block('Email', [VALIDATION_TYPES.email])
+                            .medium-6.cell
+                                block column_right
+                                    .contact-form__buttons
+                                        .flex-container.align-right
+                                            button.button(type='submit') Send
+
+section.plate.plate_fixed.dialog
+    .grid-container
+        .grid-x
+            .small-10.small-offset-1.cell
+                .plate__white
+                    .plate__content.pt-60.pb-45
+                        .line-y_stick-top
+                        .grid-x
+                            .small-10.small-offset-1.cell
+                                .user-editable-content.user-editable-content_text-center
+                                    h2 Thank you for contacting us!
+                                    p Your text here.

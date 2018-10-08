@@ -1,0 +1,38 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_shift-up'
+
+block prepend layers
+    .two-halves__layer.align-self-top
+        .emblem
+            i.icon-emblem-richemond
+
+block layer_fluid
+    .grid-x.grid-margin-x
+        .large-8.large-offset-4.cell
+            a(href='').two-halves__image
+                +image_srcset(require('../../images/half_wedding.jpg?sizes=320w+830w'), 830, '830px')
+
+block layer_contained
+    .grid-x.grid-margin-x
+        .large-7.cell
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-curtains.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Events
+                            h2 Your wedding at Le Richemond
+                    .line-x
+                    .user-editable-content.user-editable-content_no-p-margins
+                        p Your wedding day is one of the most important days in your lifetime, a special time to be shared with family and friends.
+                        p &nbsp;
+                        p Le Richemond provides a stylish venue to tie the knot or celebrate your marriage, where unsurpassed service and attention to detail are our specialties.
+                    .content-pattern__buttons.flex-container.align-justify
+                        a.button.button_light(href="wedding.html") Explore More
+                        a.button(href="") Book the table
+                    .content-pattern__call-us
+                        p Do not hesitate to call us
+                            a(href='tel:+410227157627')  +41 (0)22 715 7627

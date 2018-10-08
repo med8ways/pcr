@@ -1,0 +1,71 @@
+.contact {
+  &-box {
+    position: relative;
+    z-index: 2;
+    &_subscribe {
+      display: flex;
+      //max-width: 870px;
+      padding-top: 60px;
+      padding-bottom: 60px;
+      width: 100%;
+      &:before {
+        @include pos('topRight', 0, 0);
+        @include size(80%, 100%, $c-dark);
+        z-index: -1;
+        content: '';
+      }
+      .input {
+        &-group {
+          margin-bottom: 40px;
+        }
+        &-action {
+          margin-top: 50px;
+        }
+      }
+    }
+    &__wrap {
+      min-width: 450px;
+      max-width: 450px;
+      padding-left: 60px;
+      padding-right: 60px;
+      @include if-smaller-than(s) {
+        min-width: 100%;
+        padding-left: 0;
+      }
+    }
+  }
+  &-list {
+    margin-top: 65px;
+    li {
+      &:not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
+    [class*='icon'] {
+      display: inline-block;
+      width: 20px;
+      text-align: center;
+      color: $c-brand;
+      margin-right: 38px;
+    }
+    [class*='mail'] {
+      font-size: 16px;
+    }
+    [class*='pin'] {
+      font-size: 23px;
+    }
+    [class*='smartphone'] {
+      font-size: 21px;
+    }
+    a,
+    span {
+      vertical-align: middle;
+    }
+    a {
+      color: $c-light;
+      &:hover {
+        color: $c-brand;
+      }
+    }
+  }
+}

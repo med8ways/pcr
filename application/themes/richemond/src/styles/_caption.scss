@@ -1,0 +1,10 @@
+.caption {
+  font-size: 13px;
+  line-height: 1.8em;
+  &, & a {
+    color: transparentize($c-white, .5);
+  }
+  &, p {
+    text-align: center;
+  }
+}

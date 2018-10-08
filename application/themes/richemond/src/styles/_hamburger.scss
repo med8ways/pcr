@@ -1,0 +1,95 @@
+$padding: 0px;
+$width: 23px;
+$height: 16px;
+$thick: 2px;
+
+@function sqrt($r) {
+  $x0: 1;
+  $x1: $x0;
+
+  @for $i from 1 through 10 {
+    $x1: $x0 - ($x0 * $x0 - abs($r)) / (2 * $x0);
+    $x0: $x1;
+  }
+
+  @return $x1;
+}
+
+@mixin hamburger(
+  $width,
+  $height,
+  $thick,
+  $color,
+  $padding
+) {
+
+  $first-bar-top: $padding;
+  $middle-bar-top: $padding + 0.5 * ($height - $thick);
+  $last-bar-top: $padding + $height - $thick;
+  $half-width: 0.5 * $width + $padding;
+
+  display: block;
+  width: $width + px;
+  height: $height + px;
+  position: relative;
+  cursor: pointer;
+  box-sizing: content-box;
+  padding: $padding;
+  .hamburger__bar {
+    display: block;
+    position: absolute;
+    height: $thick + px;
+    background-color: $color;
+    left: $padding;
+    right: $padding;
+    transform: rotate(0deg) scaleX(1) translateY(0);
+    transition: .25s linear;
+    transform-origin: left center;
+    top: $middle-bar-top;
+    &:first-child { top: $first-bar-top; transform-origin: left top; }
+    &:last-child { top: $last-bar-top; transform-origin: left bottom; }
+  }
+
+  &_type-asym {
+    .hamburger__bar {
+      transform: rotate(0deg) scaleX(.6) translateY(0);
+      &:first-child, &:last-child {
+        transform: rotate(0deg) scaleX(1) translateY(0);
+      }
+    }
+  }
+
+  .opened & {
+    &.hamburger_type-default {
+      .hamburger__bar {
+        $sinus: $width / (sqrt($width * $width + $height * $height) + $thick);
+        &:first-child { transform: rotate(45deg) scaleX($sinus) }
+        &:nth-child(2) { transform: translateX(-50%); opacity: 0; }
+        &:last-child { transform: rotate(-45deg) scaleX($sinus) }
+      }
+    }
+    &.hamburger_type-scale {
+      .hamburger__bar {
+        &:first-child,
+        &:last-child { top: $middle-bar-top; left: $half-width; right: $half-width; }
+        &:nth-child(2) { transform: rotate(45deg) scaleX(1.4); }
+        &:nth-child(3) { transform: rotate(-45deg) scaleX(1.4); }
+      }
+    }
+    &.hamburger_type-asym {
+      .hamburger__bar {
+        transform: translateX(-50%);
+        opacity: 0;
+        &:first-child, &:last-child {
+          opacity: 1;
+        }
+        &:first-child { transform: rotate(45deg)  scaleX(1.07) translateY(-2px); }
+        &:last-child { transform: rotate(-45deg) scaleX(1.07) translateY(2px); }
+      }
+    }
+  }
+}
+
+.hamburger {
+  @include hamburger(25, 15, 1, $c-white, ($header-height - 15) / 2);
+}

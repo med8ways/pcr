@@ -1,0 +1,6 @@
+.map {
+  height: 565px;
+  @include if-smaller-than(sm) {
+    height: 350px;
+  }
+}

@@ -1,0 +1,19 @@
+section.section.section_news
+    .grid-container
+        .content-pattern
+            .content-pattern__top
+                h4 #lerichemond
+                h2 Follow us
+            .line-x
+        .grid-x.align-center
+            each item in [{i: 1, type: 'instagram'}, {i:2, type: 'facebook'}, {i:3, type: 'twitter'}, {i:4, type: 'pinterest'}]
+                .small-6.medium-3.cell
+                    a.news-item(href='')
+                        .news-item__image
+                            img(src=require(`../../../images/news_${item.i}.jpg`) alt)
+                        .news-item__bottom
+                            i(class=`icon-${item.type}`)
+                            .news-item__text
+                                p= item.type
+
+

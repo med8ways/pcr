@@ -1,0 +1,37 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_bg-none two-halves_border-thin'
+    - image = require('../../images/half_suites.jpg?sizes=320w+640w')
+
+block prepend layers
+    .two-halves__layer.align-self-top
+        .emblem
+            i.icon-emblem-richemond
+
+block image
+    +image_srcset(require('../../images/half_gym.jpg?sizes=320w+685w'), 685, '685px')
+
+block content
+    .content-pattern__decor
+        img(src=require('../../images/icons/decor-fitness.svg') alt)
+    .content-pattern__top
+        .user-editable-content
+            h4 At the only urban Spa by Sisley
+            h2 Fitness & Coach
+    .line-x
+    .user-editable-content.mb-20
+        p Make the most of the beautiful Geneva landscape as you enjoy an invigorating hour of fitness training with friends or in a private session.
+    .accordeons
+        +accordeon({title: "Membership Benefits"}, null, '<div class="user-editable-content"><ul><li>You become strong</li><li>You become smart</li></ul></div>')
+        +accordeon({title: "Membership Rates"}, null, '<div class="user-editable-content">' +
+        '<p><b>1 year (from 7am to 10pm)</b> &mdash; CHF 3,000</p>' +
+        '<p><b>1 year (from 7am to 2pm)</b> &mdash; CHF 1,500</p>' +
+        '<p><b>6 months (from 7am to 10pm)</b> &mdash; CHF 1,800</p>' +
+        '<p><b>3 months (from 7am to 10pm)</b> &mdash; CHF 900</p>' +
+        '<p><b>1 month (from 7am to 10pm)</b> &mdash; CHF 350</p>' +
+        '<p>Day Spa Access CHF 60 from 7am to 10pm</p>' +
+        '<p>For more detail or to arrange a tour, please contact the spa team.</p>' +
+        '<p><a href="mailto:info.spa@lerichemond.com">info.spa@lerichemond.com</a>' +
+        '<br><a href="tel:+410227157261">+41 (0)22 715 7261</a></p>' +
+        '</div>')

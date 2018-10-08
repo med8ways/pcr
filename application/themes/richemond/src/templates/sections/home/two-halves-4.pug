@@ -1,0 +1,49 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_bg-gray two-halves_image-left two-halves_shift-up'
+
+block prepend layers
+    .two-halves__layer.align-self-top.flex-container.align-right
+        .emblem
+            i.icon-emblem-richemond
+
+block layer_fluid
+    .grid-x
+        .large-8.cell
+            a(href='').two-halves__image
+                +image_srcset(require('../../images/half_spa.jpg?sizes=320w+830w'), 830, '830px')
+
+block layer_contained
+    .grid-x
+        .large-7.large-offset-5.cell
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-spa.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 At the only urban Spa by Sisley
+                            h2 Relax & Revive
+                    .line-x
+                    .user-editable-content.user-editable-content_no-p-margins
+                        p Welcome to the world of well being at Le Spa by Sisley
+                        p &nbsp;
+                        p Located in the centre of Geneva, in a luxurious oasis as you indulge in pampering spa treatments from acclaimed French skincare experts Sisley. Their renowned face and body treatments are based on aromacology – the science of relaxing body and mind through the use of fragrance.
+                    .content-pattern__entries
+                        .entry-with-icon
+                            .entry-with-icon__image
+                                img(src=require('../../images/icons/entry-schedule.svg') alt)
+                            .entry-with-icon__text
+                                p Lorem ipsum dolor sit amet
+                        .entry-with-icon
+                            .entry-with-icon__image
+                                img(src=require('../../images/icons/entry-weight.svg') alt)
+                            .entry-with-icon__text
+                                p Pellentesque dignissim et ex at egestas
+                    .content-pattern__buttons.flex-container.align-justify
+                        a.button.button_light(href="") Discover our treatments
+                        a.button(href="") Book
+                    .content-pattern__call-us
+                        p Do not hesitate to call us
+                            a(href='tel:+410227157000')  +41 (0)22 715 7000

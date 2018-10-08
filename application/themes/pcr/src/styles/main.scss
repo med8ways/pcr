@@ -1,0 +1,42 @@
+@import '../icomoon/style';
+@import '~foundation-sites/scss/foundation';
+@include foundation-xy-grid-classes;
+@include foundation-flex-classes;
+@import 'var';
+@import 'mixins';
+@import 'responsive';
+@import 'typography';
+@import 'reset';
+@import 'application';
+@import 'elements/cookies';
+
+.application {
+  @import 'elements/preloader';
+  @import 'elements/header';
+  @import "elements/menu";
+  @import "elements/sidebar";
+  @import "elements/social";
+  @import "elements/logo";
+  @import 'info-box';
+  @import "image-box";
+  @import "content";
+  @import "bg-text";
+  @import 'elements/footer';
+  //@import 'elements/scroll-to-top';
+  @import "elements/contact";
+  @import 'blocks/form';
+  @import "blocks/slider";
+  @import 'button';
+  @import "icons";
+  @import "gallery";
+  @import "news";
+  @import "pagination";
+  //@import "services";
+  //@import 'social';
+  //@import 'animations';
+  //@import 'custom-select';
+  @import "lines";
+  @import "blocks/maps";
+}
+
+@import 'edit-mode';

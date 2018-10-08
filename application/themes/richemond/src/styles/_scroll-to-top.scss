@@ -1,0 +1,27 @@
+.scroll-to-top {
+  position: fixed;
+  z-index: 1;
+  right: 50px;
+  bottom: 45px;
+  width: 50px;
+  line-height: 50px;
+  text-align: center;
+  color: $c-white;
+  background: $c-blue-dark;
+  border: 1px solid transparentize($c-white, .87);
+  transition: color .25s $easing;
+  .icon-arrow-up {
+    font-size: 13px;
+  }
+  &:hover {
+    color: transparentize($c-white, .33);
+  }
+  @include if-smaller-than(lg) {
+    right: $header-offset;
+    bottom: $header-offset;
+  }
+  @include if-smaller-than(sm) {
+    right: 0;
+    bottom: 0;
+  }
+}

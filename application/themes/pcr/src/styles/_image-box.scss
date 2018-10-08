@@ -1,0 +1,121 @@
+.image-box {
+  position: relative;
+  z-index: 1;
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    will-change: contents;
+  }
+  &_cover {
+    @include pos('topRight', 0, 0);
+    height: 100%;
+    max-width: 975px;
+    min-width: 600px;
+    width: calc(100% - 400px);
+    &-lg {
+      height: calc(100% + 70px);
+      &.image-box_btm-shadow {
+        &:after {
+          background-image: linear-gradient(89deg, rgba(0,0,0,0.00) 59%, #000000 100%);
+          transform: rotateY(180deg);
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+  &_light-transparent {
+    img {
+      opacity: 0.8;
+    }
+  }
+  &_half-transparent {
+    img {
+      opacity: 0.5;
+    }
+  }
+  &_full {
+    max-width: none;
+    min-width: 0;
+    width: 100%;
+  }
+  &_article {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+  &_top-shadow {
+    &:before {
+      @include covers-parent;
+      z-index: 1;
+      content: '';
+      background-image: $s-top-shadow;
+      opacity: 0.8;
+    }
+  }
+  &_btm-shadow {
+    &:after {
+      z-index: 1;
+      @include covers-parent;
+      content: '';
+      background-image: $s-btm-shadow;
+    }
+  }
+  &_lighter-shadow {
+    &:before,
+    &:after {
+      opacity: 0.5;
+    }
+  }
+  &__inner {
+    height: 100%;
+  }
+}
+
+.image-wrap {
+  display: flex;
+  justify-content: center;
+  height: 620px;
+  margin: 20px 0;
+  &_clip {
+    height: auto;
+    position: relative;
+    z-index: 2;
+    .image-box {
+      width: 510px;
+      height: 750px;
+      overflow: hidden;
+      span {
+        position: absolute;
+        background-color: $c-bg-fill;
+        &:nth-of-type(1),
+        &:nth-of-type(2) {
+          left: 0;
+          width: 50%;
+          height: 200px;
+        }
+        &:nth-of-type(1) {
+          top: 0;
+          transform: translate(0, -115px);
+        }
+        &:nth-of-type(2) {
+          bottom: 0;
+          transform: translate(0, 25px);
+        }
+        &:nth-of-type(3) {
+          top: 0;
+          left: 50%;
+          width: 30px;
+          height: 100%;
+          transform: translate(-50%, 0);
+        }
+        &:nth-of-type(4) {
+          top: 400px;
+          right: 0;
+          width: 50%;
+          height: 30px;
+        }
+      }
+    }
+  }
+}
+

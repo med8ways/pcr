@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="7px" height="13px" viewBox="0 0 7 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>Arrow-Up</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Section-/-Footer" transform="translate(-1362.000000, -487.000000)" fill="#D8D8D8">
+            <g id="component-/-Up">
+                <g transform="translate(1340.000000, 469.000000)">
+                    <polygon id="Arrow-Up" points="24.5 20 24.5 31 25.5 31 25.5 20 28.0041656 22 28.0041656 21 25 18 22.0013428 21 22.0013428 22"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

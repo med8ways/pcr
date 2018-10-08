@@ -1,0 +1,14 @@
+extends ../form
+
+block top_content
+    h2 Get in Touch
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat turpis vestibulum tortor gravida, at mattis tellus sodales.
+
+block append column_left
+    +input_block('Country', null, ['Armenia', 'Belgium', 'Canada', 'Denmark'])
+
+block prepend column_right
+    +input_block('Address')
+    +input_block('Nature Of Enquiry', null, ['Booking', 'Other'])
+    +input_block('Please contact me by', null, ['E-mail', 'Phone'])
+    +input_block('Message', null, null, 'textarea')

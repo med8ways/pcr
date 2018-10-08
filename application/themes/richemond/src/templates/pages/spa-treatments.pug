@@ -1,0 +1,44 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Treatments at Le Spa by Sisley'
+
+block content
+    include ../sections/spa-treatments/top-block
+    .grid-container
+        .grid-x.grid-margin-x
+            .medium-6.cell
+                .card.card_treatment.card_popup
+                    +card_inner(
+                    null,
+                    'Sisley Facials Packages',
+                    '6 Phyto-Aromatiques Facials of your choice of 60 minutes at CHF 1,050. 6 Supreme Anti-Ageing Facials of 90 minutes at CHF 2,250. 6 Phyto-Aromatiques Sisleÿa Facials of 90 minutes at CHF 1,575.',
+                    require('../../images/card-spa-5.jpg'),
+                    '<a href="" class="button">Book Now</a>'
+                    )
+            .medium-6.cell
+                .card.card_treatment.card_popup
+                    +card_inner(
+                    null,
+                    'Le Spa by Sisley weekend offer',
+                    '6 Exfoliating & 6 Energising treatments of 30 & 60 minutes for CHF 1,500. 6 Exfoliating & 6 Energising treatments 30 & 90 minutes CHF 1,950.',
+                    require('../../images/card-spa-6.jpg'),
+                    '<a href="" class="button">Book Now</a>'
+                    )
+            .medium-6.cell
+                .card.card_treatment.card_popup
+                    +card_inner(
+                    null,
+                    'Festive season at Le Jardin',
+                    '<p>6 Wellbeing Escape of 120 minutes for CHF 1,900.</p>' +
+                    '<p>6 Le Richemond Escape of 180 mins for CHF 3,450. </p>' +
+                    '<p>6 Tranquil Escape of 180 mins for CHF 2,900.</p>' +
+                    '<p>6 A Moment of Calm of 90 mins for CHF 2,750.</p>',
+                    require('../../images/card-spa-4.jpg'),
+                    '<a href="" class="button">Book Now</a>'
+                    )
+    include ../sections/spa-treatments/form
+
+block append breadcrumbs
+    +breadcrumb('Spa', 'spa.html')
+    +breadcrumb('Treatments at Le Spa by Sisley')

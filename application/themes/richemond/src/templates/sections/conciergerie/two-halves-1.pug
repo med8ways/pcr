@@ -1,0 +1,30 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_dark two-halves_bg-velvet two-halves_small two-halves_image-left two-halves_shift-up'
+
+block prepend layers
+    .two-halves__layer.flex-container.align-right
+        .emblem
+            i.icon-emblem-richemond
+
+block layer_fluid
+    .grid-container
+        .grid-x.grid-margin-x
+            .large-8.cell
+                a(href='').two-halves__image.two-halves__image_shift-up
+                    +image_srcset(require('../../images/half_offers.jpg?sizes=320w+640w'), 640, '730px')
+
+
+block layer_contained
+    .grid-x.grid-margin-x
+        .large-7.large-offset-5.cell
+            .two-halves__content
+                .content-pattern
+                    .line-y.line-y_stick-top
+                    .content-pattern__top
+                        .user-editable-content.user-editable-content_h4-is-black
+                            h4 Kids corner
+                            h2 For our little guests
+                .mt-50.user-editable-content.user-editable-content_text-center
+                    p We offer complimentary children books and if you prefer to eat in your room we have a dedicated children’s room service menu as well as a wide choice of children’s movies and DVD’s.

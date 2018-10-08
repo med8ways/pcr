@@ -1,0 +1,30 @@
+extends ../layout
+
+block vars
+    - page_title = 'Contact Us'
+
+block content
+    .content__cover.is-static
+        +additional-content('Contact Us', 'Contact Us')(class='bg-text_left')
+        .grid-container
+            .grid-x.grid-margin-x.align-center.align-middle
+                .medium-offset-1.large-5.medium-8.small-12.cell
+                    +cover-content('Écrivez-nous et nous vous répondrons', 'Contact us', 'Here, I focus on a range of items and features that we use in life ' +
+                    'without giving them a second thought such.')(class='info-box_cover')
+                    .contact-list
+                        ul
+                            li
+                                span.icon-pin
+                                span 7844 Garnett Mount Apt. 716
+                            li
+                                span.icon-mail
+                                a(href='mailto:jaskolski.thea@darwin.biz') jaskolski.thea@darwin.biz
+                            li
+                                span.icon-smartphone
+                                a(href='tel:155-520-7994') 155-520-7994
+                .large-5.medium-8.small-12.cell
+                    .contact-box
+                        .contact-box__wrap
+                            include ../blocks/contact
+
+    #map(data-lat='46.35' data-lng='6.8' data-markerlat='46.32' data-markerlng='6.96' data-zoom='10' data-markericon=require('../../images/pin.svg'))

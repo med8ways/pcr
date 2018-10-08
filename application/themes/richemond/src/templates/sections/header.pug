@@ -1,0 +1,63 @@
+header.header
+    .header__offset
+        .header__black
+            .header__left
+                if is_coming_soon_page
+                    a(href='mailto:info@lerichemond.com') info@lerichemond.com
+                else
+                    .lang-switcher
+                        +ul([
+                            {title: 'EN', href: 'javascript: void null', active: true},
+                            {title: 'FR', href: 'javascript: void null'},
+                            {title: 'RU', href: 'javascript: void null'}
+                        ])
+                    a(href='#').icon-keys
+                    include newsletter
+            .header__center
+                a(href='index.html')
+                    img(src=require('../../images/icons/richemond.svg') alt)
+            .header__right
+                .header__phone
+                    a(href='tel:+410227157000') +41 22 715 7000
+                if !is_coming_soon_page
+                    .header__buttons
+                        a(href='').book-now
+                            i.icon-suitcase
+                            .book-now__text
+                                p Book now
+                        a(href='' data-title='Edit Booking').edit-booking
+                            i.icon-edit
+                    .hamburger.hamburger_type-default
+                        for i in [1,2,3]
+                            .hamburger__bar
+
+
+        // foldable menu
+        if !is_coming_soon_page
+            .header-fold.flex-container.flex-dir-column
+                nav.header-fold__top
+                    .grid-container
+                        .layers
+                            .emblem
+                                i.icon-emblem-richemond
+                            .header-fold__nav
+                                +ul([
+                                    {href: 'the-hotel.html', title: 'The Hotel'},
+                                    {href: 'bar.html', title: 'Bar'},
+                                    {href: 'events.html', title: 'Events'},
+                                    {href: 'rooms.html', title: 'Suites & Rooms'},
+                                    {href: 'conciergerie.html', title: 'Conciergerie'},
+                                    {href: 'news.html', title: 'News'},
+                                    {href: 'restaurant.html', title: 'Restaurant'},
+                                    {href: 'spa.html', title: 'SPA'},
+                                    {href: 'contact.html', title: 'Contact'},
+                                    {href: 'offers.html', title: 'Offers'},
+                                    {href: 'gallery.html', title: 'Gallery'}
+                                ])
+                div
+                    .grid-container
+                        .header-fold__bottom
+                            .header-fold__caption
+                                include caption
+                            .header-fold__social
+                                include social

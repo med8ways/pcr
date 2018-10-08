@@ -1,0 +1,121 @@
+.footer {
+  z-index: 1; // to overflow the white thing
+  margin-top: auto;
+  background: $c-blue-dark;
+  padding-top: 60px;
+  padding-bottom: 45px;
+  font-weight: 400;
+  &, & a {
+    transition: color .2s $easing;
+    color: transparentize($c-white, .6);
+  }
+  a:hover {
+    color: $c-white;
+  }
+  &__logo {
+    margin-bottom: 40px;
+    .page-template-full & {
+      pointer-events: none;
+    }
+  }
+  &__caption {
+    .user-editable-content {
+      p:first-child, p:nth-child(2) {
+        display: inline-block;
+      }
+    }
+  }
+  &__social {
+    margin-top: 30px;
+  }
+  &__nav {
+    @include small-uppercase;
+    line-height: 1.3em;
+    margin-top: 70px;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: -25px;
+    }
+    li {
+      flex: 0 0 percentage(1 / 6);
+      list-style: none;
+      text-align: center;
+      margin-top: 25px;
+      padding: 0 15px;
+      @include if-smaller-than(md) {
+        flex-basis: 100%;
+        padding: 0;
+        margin-top: 20px;
+      }
+    }
+  }
+  &__bottom {
+    margin-top: 40px;
+    border-top: 1px solid transparentize($c-white, .9);
+    padding-top: 30px;
+  }
+  &__service-nav {
+    @include small-uppercase;
+    @include if-smaller-than(md) {
+      margin-top: 30px;
+      text-align: center;
+    }
+    @include if-smaller-than(sm) {
+      margin-bottom: 15px;
+    }
+    a {
+      + a {
+        &::before {
+          content: '|';
+          margin: 0 1em;
+        }
+        &:hover::before {
+          color: transparentize($c-white, .6);
+        }
+      }
+    }
+  }
+  &__copyright {
+    @include small-uppercase;
+    @include if-smaller-than(sm) {
+      p {text-align: center;}
+    }
+  }
+  &__prefer {
+    margin-top: 30px;
+    display: flex;
+    a {
+      transition: opacity .35s $easing;
+      &:hover {
+        opacity: .66;
+      }
+    }
+    :first-child {
+      margin-right: 30px;
+      margin-top: 14px;
+    }
+    :last-child {
+      margin-left: auto;
+    }
+  }
+  .newsletter {
+    margin-left: 15px;
+    @include if-smaller-than(sm) {
+      margin-top: 10px;
+    }
+  }
+  .align-bottom {
+    @include if-smaller-than(md) {
+      align-items: center;
+    }
+  }
+  .align-justify {
+    @include if-smaller-than(md) {
+      justify-content: center;
+    }
+    @include if-smaller-than(sm) {
+      flex-direction: column;
+    }
+  }
+}

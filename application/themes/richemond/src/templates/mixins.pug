@@ -1,0 +1,84 @@
+mixin image_srcset(image, default_width, sizes)
+    if !sizes
+        - sizes = '50vw'
+    if !default_width
+        - default_width = 1200
+    img(
+    src=image.sources[`${default_width}w`]
+    alt
+    srcset=image.srcSet
+    sizes=sizes
+    )
+
+mixin span_or_a(item)
+    if item.href != null
+        a(href= item.href)= item.title
+    else
+        span= item.title
+
+mixin li_span_or_a(item)
+    if !item.active && item.href != null
+        li
+            a(href= item.href)= item.title
+    else
+        li.active
+            if item.href == null
+                span= item.title
+            else
+                a(href= item.href)= item.title
+
+mixin ul(children)
+    ul
+        each child in children
+            +li_span_or_a(child)
+
+mixin accordeon(head, children, inner_html)
+    .accordeon
+        .accordeon__head
+            if head
+                +span_or_a(head)
+        .accordeon__dropdown
+            if children != null
+                +ul(children)
+            else if inner_html != null
+                .accordeon__html !{inner_html}
+
+mixin card_inner(date, title, text, image, do_buttons)
+    .card__image
+        if image
+            img(src=image alt)
+    .card__text
+        if date
+            .card__date
+                p !{date}
+        if title
+            .card__title
+                p= title
+        if text
+            if text[0] === '<'
+                .user-editable-content.user-editable-content_text-center.user-editable-content_no-p-margins !{text}
+            else
+                .user-editable-content.user-editable-content_text-center.user-editable-content_no-p-margins
+                    p= text
+        if do_buttons != null
+            if typeof(do_buttons) === 'boolean'
+                .card__buttons
+                    a.button.button_light(href='room.html') View More
+                    a.button(href='') Book Now
+            else if do_buttons[0] === '<'
+                .card__buttons !{do_buttons}
+            else
+                .card__buttons
+                    a.button.button_light(href='')= do_buttons
+
+mixin card(date, title, text, image, do_buttons, attrs, link_itself)
+    if !attrs
+        - attrs = {}
+    .medium-6.cell&attributes(attrs)
+        if link_itself
+            a(href= link_itself).card
+                +card_inner(date, title, text, image, do_buttons)
+        else
+            .card
+                +card_inner(date, title, text, image, do_buttons)
+

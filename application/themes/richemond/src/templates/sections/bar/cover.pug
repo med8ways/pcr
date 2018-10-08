@@ -1,0 +1,24 @@
+extends ../cover
+
+block vars
+    - image = require('../../images/cover_bar.jpg?sizes=640w+1024w+1400w')
+
+block append layers
+    .cover__overlay
+        .grid-container
+            .grid-x
+                .medium-8.medium-offset-2.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .line-y
+                        .cover__uppertext
+                            p Bar
+                        .cover__title
+                            h1 Le Bar
+            .grid-x
+                .medium-6.medium-offset-3.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .user-editable-content.user-editable-content_text-center.o-80
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec faucibus dui. Nunc vel fringilla nisi, et rhoncus arcu. Praesent sit amet tincidunt elit, non fermentum est.
+            .mt-65.flex-container.align-center
+                a(href='').button.scroll-to-reservation Reserve a table online
+                a(href='').button.button_transparent Le Bar Menu

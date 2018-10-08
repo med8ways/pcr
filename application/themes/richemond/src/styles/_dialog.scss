@@ -1,0 +1,9 @@
+.dialog {
+  @include clipable;
+  .plate__white {
+    background: none;
+    &, a {
+      color: $c-white;
+    }
+  }
+}

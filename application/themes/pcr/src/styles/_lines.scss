@@ -1,0 +1,29 @@
+.lines {
+  position: absolute;
+  top: 50%;
+  z-index: -1;
+  transform: translateY(-50%);
+  &_left {
+    right: 68%;
+  }
+  &_right {
+    left: 68%;
+    transform: translateY(-50%) rotateY(-180deg);
+  }
+}
+
+.line {
+  @include pos('bottomLeft', 100%, 50%);
+  width: 2px;
+  height: 600px;
+  transform: translateX(-50%);
+  overflow: hidden;
+  @include if-smaller-than(m) {
+    height: 200px;
+  }
+  &:before {
+    @include pos('topLeft', 0, 0);
+    @include size(100%, 100%, $c-brand);
+    content: '';
+  }
+}

@@ -1,0 +1,57 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Gallery'
+
+block content
+    mixin gallery(image, text, slides)
+        if !slides
+            - slides = []
+        .medium-6.cell
+            .gallery
+                .gallery__toggle.card-bordered
+                    .card-bordered__image
+                        img(src=image alt)
+                    .user-editable-content.user-editable-content_text-center
+                        h3= text
+                .gallery__popup
+                    .gallery__close
+                        i.icon-close
+                    .gallery__slides
+                        ul
+                            each slide in slides
+                                li
+                                    if 'src' in slide
+                                        img(data-src=slide.src alt)
+                                    if 'caption' in slide
+                                        p= slide.caption
+
+
+
+
+    include ../sections/gallery/top-block
+    .mb-70.grid-container
+        .grid-x.grid-margin-x
+            +gallery(require('../../images/seasonal-menu.jpg'), 'Le Jardin', [
+                {src: require('../../images/setout.jpg'), caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+                {src: require('../../images/air-balloon.jpg'), caption: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
+                {src: require('../../images/cailler.jpg'), caption: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'}
+            ])
+            +gallery(require('../../images/market-menu.jpg'), 'Le Spa', [
+                {src: require('../../images/setout.jpg'), caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+                {src: require('../../images/air-balloon.jpg'), caption: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
+                {src: require('../../images/cailler.jpg'), caption: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'}
+            ])
+            +gallery(require('../../images/market-menu.jpg'), 'Conciergerie', [
+                {src: require('../../images/setout.jpg'), caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+                {src: require('../../images/air-balloon.jpg'), caption: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
+                {src: require('../../images/cailler.jpg'), caption: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'}
+            ])
+            +gallery(require('../../images/seasonal-menu.jpg'), 'Bar', [
+                {src: require('../../images/setout.jpg'), caption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'},
+                {src: require('../../images/air-balloon.jpg'), caption: 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'},
+                {src: require('../../images/cailler.jpg'), caption: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'}
+            ])
+
+block append breadcrumbs
+    +breadcrumb('Gallery')

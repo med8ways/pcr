@@ -1,0 +1,73 @@
+.newsletter {
+  width: calc(50vw - 365px);
+  min-width: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid transparentize($c-gray-dark, .6);
+  display: flex;
+  align-items: center;
+  color: transparentize($c-gray-dark, .6);
+  &__input {
+    @include small-uppercase;
+    line-height: 1.3em;
+    flex: 1;
+    color: $c-white;
+    text-overflow: ellipsis;
+    ::placeholder {
+      color: transparentize($c-gray-dark, .6);
+    }
+    &:focus {
+      &::placeholder {
+        color: transparentize($c-white, .3);
+      }
+      + .newsletter__label {
+        color: transparentize($c-white, .3);
+      }
+    }
+  }
+  &__label {
+    padding: 0 15px;
+    order: -1;
+    font-size: 11px;
+    line-height: 1em;
+  }
+  &__button {
+    color: $c-gray-dark;
+    margin: 0 17px;
+    font-size: 10px;
+    line-height: 1.3em;
+    .icon-arrow-left {
+      font-size: 6px;
+      line-height: 1em;
+    }
+    &:hover {
+      color: $c-white;
+    }
+  }
+  &_dark {
+    border-color: $c-blue-dark;
+    color: $c-gray-dark;
+    padding-top: 0;
+    padding-bottom: 5px;
+    .newsletter__input {
+      @include small-uppercase;
+      color: $c-text;
+      ::placeholder {
+        color: $c-gray-dark;
+      }
+      &:focus {
+        &::placeholder {
+          color: $c-text;
+        }
+        + .newsletter__label {
+          color: $c-text;
+        }
+      }
+    }
+    .newsletter__button {
+      &:hover {
+        color: $c-text;
+      }
+    }
+  }
+}

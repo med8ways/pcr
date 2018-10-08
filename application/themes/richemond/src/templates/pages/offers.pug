@@ -1,0 +1,88 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Offers'
+
+block content
+    include ../sections/offers/top-block
+    .grid-container
+        .grid-x.grid-margin-x
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '17 Sep to 31 Dec',
+                    '4 Nights for the price of 3',
+                    'Book a room or suite at Le Richemond for four or more consecutive nights and the fourth night is complimentary.',
+                    require('../../images/card-4-nights.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '16 Jun to 11 Jan',
+                    'The Perfect Geneva Experience',
+                    'Enjoy a 20% discount on the perfect lakeside escape',
+                    require('../../images/card-geneva-experience.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '01 May to 31 Dec',
+                    'Family Time in Geneva',
+                    'If you’re looking for some well-deserved time away with the kids we’ve got just the thing.',
+                    require('../../images/card-family-time.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '01 Jan to 31 Dec',
+                    'Romantic Break',
+                    '<p>A romantic break at Le Richemond, on the banks of Lake Geneva, by the famous Jet d’Eau.</p>' +
+                    '<p>&nbsp;</p>' +
+                    '<div class="feature"><div class="feature__image"><img src="' + require('../../images/icons/feature-wifi.svg') + '" alt=""></div><div class="feature__text"><p>Complimentary Wi-Fi</p></div></div>' +
+                    '<div class="feature"><div class="feature__image"><img src="' + require('../../images/icons/feature-coffee.svg') + '" alt=""></div><div class="feature__text"><p>Breakfast included</p></div></div>',
+                    require('../../images/card-romantic-break.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '01 Jan to 31 Dec',
+                    'Luxury Spa Break',
+                    'Le Richemond invites you to experience Le Spa by Sisley. Relax in a luxurious oasis as you indulge...',
+                    require('../../images/card-spa-break.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '22 Mar to 31 Dec',
+                    'Guaranteed Lakeview',
+                    'Gaze at the picturesque lake from the comfort of a guaranteed lake view room or suite, across to the landmark...',
+                    require('../../images/card-lakeview.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '01 Jan to 31 Dec',
+                    'Bed and Breakfast',
+                    'For many people breakfast is the most important meal of the day, so we promise to get your day...',
+                    require('../../images/card-bed-and-breakfast.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+            .medium-6.cell
+                .card.card_event.card_popup
+                    +card_inner(
+                    '01 Jan to 31 Dec',
+                    'Geneva on Business',
+                    'To ensure your Geneva business trip is a real pleasure, we’ve put together this special offer...',
+                    require('../../images/card-on-business.jpg'),
+                    '<a href="offer.html" class="button button_light">More details</a>'
+                    )
+    include ../sections/pagination
+
+block append breadcrumbs
+    +breadcrumb('Offers')

@@ -1,0 +1,98 @@
+/*
+ Mixins and all styles affecting fonts are gathered in this file
+ Open UI kit, fill this file and forget about fonts
+  */
+
+* {
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  font-family: $f-lato;
+  font-weight: 300;
+  color: $c-light;
+  font-size: 13px;
+  line-height: 25px;
+  background-color: $c-bg-fill;
+  letter-spacing: 1px;
+  //@include if-smaller-than(xxs) {
+  //  font-size: 12px;
+  //}
+}
+
+@mixin heading {
+  font-family: $f-oswald;
+  font-weight: 200;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+@mixin h1 {
+  @include heading;
+  font-size: 120px;
+  line-height: 130px;
+  letter-spacing: 3px;
+  @include if-smaller-than(m) {
+    font-size: 75px;
+    line-height: 90px;
+  }
+}
+
+@mixin h2 {
+  @include heading;
+  font-size: 60px;
+  line-height: 70px;
+  letter-spacing: 0.02em;
+  @include if-smaller-than(s) {
+    font-size: 45px;
+  }
+}
+
+@mixin h3 {
+  @include heading;
+  font-size: 22px;
+  line-height: 28px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  color: $c-brand;
+  //@include if-smaller-than(s) {
+  //  font-size: 20px;
+  //}
+}
+
+h1, .h1 {
+  @include h1;
+}
+
+h2, .h2 {
+  @include h2;
+}
+
+h3, .h3 {
+  @include h3;
+}
+
+h4, .h4 {
+  font-size: 14px;
+  line-height: 25px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+}
+
+p {
+  text-align: justify;
+  //@include if-smaller-than(xxs) {
+  //  line-height: 24px;
+  //}
+}
+
+a {
+  color: transparentize($c-light, 0.5);
+  transition: color $duration-sm;
+  &:hover {
+    color: $c-brand;
+  }
+}

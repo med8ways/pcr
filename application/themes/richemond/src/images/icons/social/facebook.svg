@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="8px" height="15px" viewBox="0 0 8 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 46.1 (44463) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / Social / Facebook-icon</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Home-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.400000006">
+        <g id="Opened-Menu-03-10" transform="translate(-954.000000, -701.000000)" fill-rule="nonzero" fill="#FFFFFF">
+            <g id="component-/-Opened-Menu" transform="translate(20.000000, 90.000000)">
+                <g id="icon-/-Social" transform="translate(934.000000, 611.000000)">
+                    <path d="M5.578125,2.859375 L7.5,2.859375 L7.5,0 L5.2265625,0 C2.484375,0.1171875 1.921875,1.6640625 1.875,3.28125 L1.875,4.7109375 L0,4.7109375 L0,7.5 L1.875,7.5 L1.875,15 L4.6875,15 L4.6875,7.5 L7.0078125,7.5 L7.453125,4.7109375 L4.6875,4.7109375 L4.6875,3.84375 C4.6875,3.3046875 5.0625,2.859375 5.578125,2.859375 Z" id="icon-/-Social-/-Facebook-icon"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

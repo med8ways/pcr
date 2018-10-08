@@ -1,0 +1,29 @@
+.sitemap {
+
+  font-weight: 500;
+
+  li {
+    margin-top: 40px;
+    font-size: 16px;
+    line-height: 1.2em;
+    list-style: none;
+    > ul {
+      margin-left: 60px;
+      > li {
+        margin-top: 9px;
+        font-size: 14px;
+        > ul {
+          margin-left: 30px;
+          > li {
+            font-size: 12px;
+            > ul {
+              > li {
+                font-size: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

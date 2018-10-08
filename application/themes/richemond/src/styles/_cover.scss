@@ -1,0 +1,91 @@
+.cover {
+  @include layers;
+  position: relative;
+  z-index: 1;
+  color: $c-white;
+  text-align: center;
+  height: 100vh;
+  min-height: 760px;
+  @include buttons-fullwidth;
+  @include if-smaller-than(sm) {
+    height: auto;
+    min-height: 100vh;
+  }
+  &__image, &__video, &__effect {
+    align-self: stretch;
+    z-index: -1;
+  }
+  &__image {
+    @include image-cover;
+    filter: brightness(.4);
+  }
+  &__video {
+    @include image-cover;
+    filter: brightness(.66);
+    > video {
+      transform: translateZ(0);
+    }
+    &, & + .cover__effect {
+      > video {
+        width: 100%;
+        min-width: 0;
+      }
+      @include if-smaller-than(sm) {
+        display: none;
+      }
+      @include if-lower-than(xs) {
+        display: none;
+      }
+    }
+  }
+  &__effect {
+    @include image-cover;
+    filter: brightness(.75);
+    clip-path: url('#emblem-richemond-for-cover');
+    > img, > video {
+      transform: translateX(-30px) translateZ(0);
+    }
+    @include if-smaller-than(sm) {
+      display: none;
+    }
+    @include if-lower-than(xs) {
+      display: none;
+    }
+  }
+  &__title {
+    margin-bottom: 20px;
+    &, * {
+      @include h2;
+    }
+    * {
+      margin: 0;
+    }
+    &_big {
+      &, * {
+        @include h1;
+      }
+    }
+  }
+  &__uppertext, &__lowertext {
+    opacity: .7;
+    &, * {
+      @include small-uppercase;
+    }
+  }
+  &__uppertext {
+    margin-bottom: 2.5em;
+  }
+  &__lowertext {
+    margin-top: 2.5em;
+  }
+  .flex-container {
+    @include if-smaller-than(sm) {
+      flex-wrap: wrap;
+    }
+  }
+  &__overlay {
+    -ms-grid-row-align: center;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+}

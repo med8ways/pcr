@@ -1,0 +1,86 @@
+.button, a.button {
+
+  @include small-uppercase;
+  display: inline-block;
+  padding: 23px 40px;
+  font-weight: 600;
+  line-height: 1.4em;
+  color: $c-white;
+  background: $c-blue-dark;
+  text-align: center;
+  position: relative; // to serve the pseduo element effect
+  overflow: hidden;
+  &__bg {
+    @include covers-parent;
+    background: $c-accent;
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .35s $easing;
+  }
+  &__text {
+    display: block;
+    transition: transform .35s $easing;
+    transform: translateX(-6px);
+  }
+  &:hover {
+    .button__bg {
+      transform: none;
+    }
+    .button__text {
+      transform: translateX(0);
+      transition-delay: .1s;
+    }
+  }
+  &_light {
+    .button__bg {
+      background: $c-white;
+    }
+    color: $c-text;
+    background: $c-gray-light;
+  }
+  &_transparent {
+    background: none;
+    border: 1px solid transparentize($c-white, .7);
+    transition: border-color .35s $easing, color .35s $easing;
+    .button__bg {
+      background: $c-white;
+    }
+    &:hover {
+      color: $c-text;
+      border-color: $c-white;
+    }
+  }
+  &_transparent-dark {
+    background: none;
+    border: 1px solid transparentize($c-blue, .7);
+    color: $c-text;
+    transition: border-color .35s $easing, color .35s $easing;
+    .button__bg {
+      background: $c-void;
+    }
+    &:hover {
+      border-color: $c-void;
+      color: $c-white;
+    }
+  }
+}
+
+.flex-container .button + .button {
+  margin-left: 30px;
+}
+
+.flex-buttons {
+  flex-wrap: wrap;
+  margin-left: -30px;
+  margin-top: -30px;
+  .button, .button + .button {
+    margin-left: 30px;
+    margin-top: 30px;
+  }
+}
+
+.buttons-fullwidth .button + .button {
+  @include if-smaller-than(sm) {
+    margin-left: 0;
+  }
+}

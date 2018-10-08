@@ -1,0 +1,71 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Career'
+
+block content
+    include ../sections/career/cover
+
+    .grid-container.mt-90
+        .news-grid
+            .grid-x.grid-margin-x
+                .medium-6.cell
+                    .card.card_job
+                        +card_inner(
+                        'Aug 20, 2017',
+                        'Junior Security & Safety Officer',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare, mauris non gravida blandit, dui erat dictum felis, Duis efficitur ipsum ac tempus semper. Mauris mattis finibus tempor. Cras nec porttitor nisl, sit amet varius ligula. Nunc auctor vel augue vel pellentesque. In luctus sagittis commodo. Integer ornare eu est et tempor. Cras mattis volutpat',
+                        null,
+                        '<a href="career-detail.html" class="button button_light">View More</a><a href="#form" class="button">Apply Now</a>'
+                        )
+                .medium-6.cell
+                    .card.card_job
+                        +card_inner(
+                        'Sept 14, 2017',
+                        'Assistant Executive Housekeeper',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare, mauris non gravida blandit, dui erat dictum felis, Duis efficitur ipsum ac tempus semper. Mauris mattis finibus tempor. Cras nec porttitor nisl, sit amet varius ligula.',
+                        null,
+                        '<a href="career-detail.html" class="button button_light">View More</a><a href="#form" class="button">Apply Now</a>'
+                        )
+                .medium-6.cell
+                    .card.card_job
+                        +card_inner(
+                        'Sept 22, 2017',
+                        'Housekeeping Coordinator',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare, mauris non gravida blandit, dui erat dictum felis, Duis efficitur ipsum ac tempus semper. Mauris mattis finibus tempor. Cras nec porttitor nisl, sit amet varius ligula.',
+                        null,
+                        '<a href="career-detail.html" class="button button_light">View More</a><a href="#form" class="button">Apply Now</a>'
+                        )
+                .medium-6.cell
+                    .card.card_job
+                        +card_inner(
+                        'Sept 24, 2017',
+                        'Laundry Attendant',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare, mauris non gravida blandit, dui erat dictum felis, Duis efficitur ipsum ac tempus semper. Mauris mattis finibus tempor. Cras nec porttitor nisl, sit amet varius ligula.',
+                        null,
+                        '<a href="career-detail.html" class="button button_light">View More</a><a href="#form" class="button">Apply Now</a>'
+                        )
+                .medium-6.cell
+                    .card.card_job
+                        +card_inner(
+                        'Oct 12, 2017',
+                        'Housekeeper',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare, mauris non gravida blandit, dui erat dictum felis, Duis efficitur ipsum ac tempus semper. Mauris mattis finibus tempor. Cras nec porttitor nisl, sit amet varius ligula.',
+                        null,
+                        '<a href="career-detail.html" class="button button_light">View More</a><a href="#form" class="button">Apply Now</a>'
+                        )
+                .medium-6.cell
+                    .card.card_job
+                        +card_inner(
+                        'Oct 18, 2017',
+                        'Laundry Manager',
+                        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent ornare, mauris non gravida blandit, dui erat dictum felis, Duis efficitur ipsum ac tempus semper. Mauris mattis finibus tempor. Cras nec porttitor nisl, sit amet varius ligula. Nunc auctor vel augue vel pellentesque. In luctus sagittis commodo. Integer ornare eu est et tempor. Cras mattis volutpat',
+                        null,
+                        '<a href="career-detail.html" class="button button_light">View More</a><a href="#form" class="button">Apply Now</a>'
+                        )
+        include ../sections/pagination
+
+    include ../sections/career/form
+
+block append breadcrumbs
+    +breadcrumb('Career')

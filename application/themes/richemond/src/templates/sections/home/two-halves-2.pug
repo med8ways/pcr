@@ -1,0 +1,47 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_shift-up'
+
+block prepend layers
+    .two-halves__layer.align-self-top
+        .emblem
+            i.icon-emblem-richemond
+
+block layer_fluid
+    .grid-x
+        .large-8.large-offset-4.cell
+            a(href='').two-halves__image
+                +image_srcset(require('../../images/half_restaurant.jpg?sizes=320w+830w'), 830, '830px')
+
+block layer_contained
+    .grid-x
+        .large-7.cell
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-restaurant.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Restaurant
+                            h2 Le Jardin
+                    .line-x
+                    .user-editable-content
+                        p At Le Jardin, chef Philippe Bourrel shares a stylish, light and fresh French cuisine featuring the best of local products. Nestled between Brunswick Gardens and Lake Geneva, facing an oasis of greenery in the center of town but sheltered from the tumult of city life.
+                    .content-pattern__entries
+                        .entry-with-icon
+                            .entry-with-icon__image
+                                img(src=require('../../images/icons/entry-award.svg') alt)
+                            .entry-with-icon__text
+                                p Lorem Quisque commodo tempor urna, non euismod
+                        .entry-with-icon
+                            .entry-with-icon__image
+                                img(src=require('../../images/icons/entry-schedule.svg') alt)
+                            .entry-with-icon__text
+                                p Cras elementum arcu id cursus convallis
+                    .content-pattern__buttons.flex-container.align-justify
+                        a.button.button_light(href="") Explore More
+                        a.button(href="") Book the table
+                    .content-pattern__call-us
+                        p Do not hesitate to call us
+                            a(href='tel:+410227157000')  +41 (0)22 715 7000

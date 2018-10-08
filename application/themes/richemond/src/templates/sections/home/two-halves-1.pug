@@ -1,0 +1,33 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_bg-none two-halves_border-thin'
+    - image = require('../../images/half_suites.jpg?sizes=320w+640w')
+
+block image
+    +image_srcset(require('../../images/half_suites.jpg?sizes=320w+685w'), 685, '685px')
+
+block content
+    .content-pattern__decor
+        img(src=require('../../images/icons/decor-suites.svg') alt)
+    .content-pattern__top
+        .user-editable-content
+            h4 Accomodations
+            h2 Rooms & Suites
+    .line-x
+    .freeze-height
+        +accordeon({title: "Rooms", href: "rooms.html#tab=rooms"}, [
+            {title: "Ambassador Suite", href: "room.html"},
+            {title: "Presidential Suite", href: "room.html"},
+            {title: "Royal Armleder Suite", href: "room.html"}
+        ])
+        +accordeon({title: "Suites", href: "rooms.html#tab=suites"}, [
+            {title: "Ambassador Suite", href: "room.html"},
+            {title: "Presidential Suite", href: "room.html"},
+            {title: "Royal Armleder Suite", href: "room.html"}
+        ])
+        +accordeon({title: "Signature Suites", href: "rooms.html#tab=signature-suites"}, [
+            {title: "Ambassador Suite", href: "room.html"},
+            {title: "Presidential Suite", href: "room.html"},
+            {title: "Royal Armleder Suite", href: "room.html"}
+        ])

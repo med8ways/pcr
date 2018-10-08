@@ -1,0 +1,31 @@
+.line-y {
+  margin: 20px auto;
+  width: 0;
+  border-left: 1px solid $c-accent;
+  height: 85px;
+  transform: translateZ(0);
+  &_stick-top {
+    position: absolute;
+    top: -42px;
+    left: 50%;
+    margin: 0;
+  }
+  &_stick-topleft {
+    position: absolute;
+    top: -42px;
+    left: 30px;
+    margin: 0;
+  }
+}
+
+.line-x {
+  width: 110px;
+  margin: 0 auto;
+  border-top: 1px solid $c-accent;
+  transform: translateZ(0);
+  &_stick-right {
+    position: absolute;
+    top: 37.5%;
+    right: -55px;
+  }
+}

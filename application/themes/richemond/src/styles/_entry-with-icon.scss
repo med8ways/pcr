@@ -1,0 +1,39 @@
+.entry-with-icon {
+  @include regular-text;
+  display: flex;
+  align-items: center;
+  margin: 30px 0;
+  &__image {
+    @include circle(50px);
+    border: 1px solid $c-gray;
+    margin-right: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .icon-plane {
+      font-size: 22px;
+    }
+    .icon-train {
+      font-size: 21px;
+    }
+    .icon-car {
+      font-size: 12px;
+    }
+  }
+  &__text {
+    flex: 1;
+  }
+  .tabs-toggles & {
+    margin: 0;
+    .entry-with-icon__image {
+      margin-right: 10px;
+      color: transparentize($c-blue, .5);
+    }
+  }
+
+  .tabs-toggles .active & {
+    .entry-with-icon__image {
+      color: $c-accent;
+    }
+  }
+}

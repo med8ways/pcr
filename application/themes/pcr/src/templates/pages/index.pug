@@ -1,0 +1,83 @@
+extends ../layout
+
+block vars
+    - page_title = 'Home'
+    - is_home = true
+
+block content
+    .content__cover.content__lg
+        +additional-content('Prestige car romand', 'Prestige')(class='bg-text_right bg-text_lighter cover-bg-text')
+        +pic-box(require('@/images/cover/cover-hp.jpg'), 'Lamborghini', require('@/images/cover/cover-hp@2x.jpg'))(class='image-box_cover image-box_top-shadow image-box_btm-shadow' data-animation="parallax")
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-8.cell
+                    +cover-content('Prestige car, un garage complet à votre service', 'Prestige car romand', false, '#', 'Read more')(class='info-box_cover')
+
+    .content__md
+        +additional-content('Prestige car romand: About us', '/Lamborghini hurracan')(class='bg-text_left')
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-offset-1.large-4.medium-5.small-12.cell
+                    .image-wrap(data-animation ="fade-left")
+                        +pic-box(require('@/images/home/about-hp.jpg'), 'About Prestige Car pic', require('@/images/home/about-hp@2x.jpg'))
+                .large-offset-1.large-5.medium-7.small-12.cell
+                    +section-content('New model on the site', 'About Prestige Car Romand', ['Le garage Prestige Car Romand a ouvert ses portes ' +
+                    'en mars 2013 dans cette magnifique ville Chablaisienne « Aigle ». Trois ans après notre inauguration, nous avons ' +
+                    'entrepris d’agrandir nos locaux afin de répondre au mieux à vos besoins.', '&nbsp;', 'Nous vous accueillions depuis ' +
+                    'le 31 octobre 2016 dans un tout nouveau showroom sur 3 niveaux qui totalise 1’800m2 où trônent plus de 60 de véhicules ' +
+                    'prestigieux sur les deux premiers niveaux et plus de 40 en extérieur. Au 3ème et dernier niveau, nous vous proposons ' +
+                    'un service de gardiennage, surveillé par un système de sécurité High-tech.'], '#', 'Read more')
+
+    .content__md.content__slider
+        +additional-content('Profitable offer', 'Profitable offer')(class='bg-text_left')
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-4.cell
+                    +section-content('Popular models', 'Profitable offer')
+                include ../blocks/slider
+
+    .content__lg
+        +additional-content('New Porsche 911 Carrera Cabriolet', 'Porsche 911')(class='bg-text_left')
+        .lines.lines_left !{require('@/images/inline/lines.svg')}
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-offset-1.large-5.cell
+                    +section-content('New model on the site', 'Mclaren 650s Successor', ['It won’t be a bigger problem to find ' +
+                    'one video game lover in your neighbor. Since the introduction of Virtual Game, it has been achieving great ' +
+                    'heights so far as its popularity and technological advancement are concerned. The history of video game is as ' +
+                    'interesting as a fairy tale. The quality of today’s video game was not at all there when video game first ' +
+                    'conceptualized and played ever. During the formulative years, video.'], '#', 'View all new models')
+                .large-offset-0.large-6.cell
+                    .image-wrap.image-wrap_clip
+                        .image-box
+                            .image-box__inner(data-animation="parallax-vertical")
+                                +picture(require('@/images/home/clip-image-hp.jpg'), 'car', require('@/images/home/clip-image-hp@2x.jpg'))
+                            span
+                            span
+                            span
+                            span
+
+    .content__md
+        +additional-content('New /Porsche 911 Carrera Cabriolet', '/Lamborghini hurracan')(class='bg-text_left')
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-offset-1.large-4.cell
+                    .image-wrap(data-animation ="fade-left")
+                        +pic-box(require('@/images/home/Ferrari-hp.jpg'), 'about home pic', require('@/images/home/Ferrari-hp@2x.jpg'))
+                .large-offset-1.large-5.cell
+                    +section-content('New model on the site', '´New ferrari 458 spider 2015', ['La première émotion est éprouvée dès le premier regard. ' +
+                    'Lignes nettes, aérodynamiques, dessinées pour fendre l’air et dompter la route. La seconde s’éprouve en la touchant. Le plus ' +
+                    'haut savoir-faire artisanal italien est appliqué à la réalisation de finitions de prestige et à une qualité sans précédent. ' +
+                    'Le troisième coup de cœur arrive en appuyant sur le bouton d’allumage et en comprenant à l’oreille ce que veut dire disposer ' +
+                    'd’un moteur à aspiration naturelle V10 et de toute la technologie nécessaire pour en avoir la maîtrise au volant.'], '#', 'View all new models')
+
+    include ../subscribe
+
+    .content__sm.content__gallery
+        .grid-container
+            .gallery(data-animation ="stagger")
+                +gallery-item('#', require('@/images/gallery/gallery-pic-1.jpg'), 'car', require('@/images/gallery/gallery-pic-1@2x.jpg'))
+                +gallery-item('#', require('@/images/gallery/gallery-pic-2.jpg'), 'car', require('@/images/gallery/gallery-pic-2@2x.jpg'))
+                +gallery-item('#', require('@/images/gallery/gallery-pic-3.jpg'), 'car', require('@/images/gallery/gallery-pic-3@2x.jpg'))
+                +gallery-item('#', require('@/images/gallery/gallery-pic-4.jpg'), 'car', require('@/images/gallery/gallery-pic-4@2x.jpg'))
+                +gallery-item('#', require('@/images/gallery/gallery-pic-5.jpg'), 'car', require('@/images/gallery/gallery-pic-5@2x.jpg'))

@@ -1,0 +1,19 @@
+extends ../cover
+
+block vars
+    - image = require('../../images/cover_panorama.jpg?sizes=640w+1024w+1400w')
+    - video = require('../../videos/richemond_cut.mp4')
+    - scroll = true
+
+block append layers
+    .cover__overlay
+        .grid-container
+            .grid-x
+                .medium-8.medium-offset-2.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .line-y
+                        .cover__uppertext
+                            p HÔTEL LE RICHEMOND
+                        .cover__title.cover__title_big
+                            h1 Legendary hotel on the banks of Lake Geneva
+                        button.play.icon-playback-play

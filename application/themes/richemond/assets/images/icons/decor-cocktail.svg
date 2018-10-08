@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="27px" height="38px" viewBox="0 0 27 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>icon / MiniBar</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Bar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-707.000000, -900.000000)" id="section-/-About" fill="#C8102E">
+            <g transform="translate(165.000000, 860.000000)">
+                <g id="component-/-About-/-Title" transform="translate(190.000000, 0.000000)">
+                    <g id="icon-/-MiniBar" transform="translate(352.000000, 40.000000)">
+                        <path d="M0,10.5192219 L12.6799193,24.4110616 L12.6799193,36.3581704 L7.12851684,36.3581704 L7.12851684,38 L19.9529278,38 L19.9529278,36.3581704 L14.4015253,36.3581704 L14.4015253,24.3187087 L27,10.5192219 L0,10.5192219 Z M3.70624225,12.1615402 L23.2935016,12.1615402 L13.5,22.7917094 L3.70624225,12.1615402 Z M16.988554,10.5192219 L23.9011647,0 L25.3656311,0.862449191 L19.0338135,10.5192219 L16.988554,10.5192219 Z" id="Combined-Shape"></path>
+                        <rect id="Path" x="6" y="15" width="15" height="1.42785645"></rect>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

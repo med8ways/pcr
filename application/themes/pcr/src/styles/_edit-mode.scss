@@ -1,0 +1,24 @@
+/*
+ styles for edit mode
+  */
+
+.hidden-non-edit-mode {
+  display: none;
+}
+
+.ccm-edit-mode {
+  .hidden-non-edit-mode {
+    display: block;
+  }
+
+  .hidden-edit-mode {
+    display: none;
+  }
+}
+
+.ccm-toolbar-visible {
+  // styles for fixed position elements when site owner logged into site and has a toolbar panel
+  .header {
+    top: 48px;
+  }
+}

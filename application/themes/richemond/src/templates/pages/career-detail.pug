@@ -1,0 +1,30 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Junior Security & Safety Officer'
+
+block content
+    include ../sections/career-detail/plate
+
+    .mt-60.mb-90.grid-container
+        .grid-x
+            .medium-8.medium-offset-2
+                .user-editable-content
+                    h3 Responsibilities
+                    p A contemporary space ideally suited to product launches, gala dinners and larger conferences, the Paul Klee Salon measures 264 m2 (2,843 ft2) and can host a seated dinner for up to 200 guests, or a cocktail reception for 280 guests. The Paul Klee Salon is accessed via the Galerie Rachmaninoff, a dramatic walkway located beneath a glass ceiling.
+                    p Cubum autem in duos cubos, aut quadratoquadratum in duos quadratoquadratos & generaliter nullam in infinitum ultra quadratum potestatem in duas eiusdem nominis fas est dividere  cuius rei demonstrationem mirabilem sane detexi. Hanc marginis exiguitas non caperet.
+                    h3 Qualifications
+                    p Cubum autem in duos cubos, aut quadratoquadratum in duos quadratoquadratos & generaliter nullam in infinitum ultra quadratum potestatem in duas eiusdem nominis fas est dividere  cuius rei demonstrationem mirabilem sane detexi. Hanc marginis exiguitas non caperet.
+                    h3 The Perks
+                    p Donec tristique dui in tortor ultricies consectetur. Ut feugiat ac mi vel blandit. Sed dictum semper nisi in auctor. Morbi rhoncus neque at tortor rhoncus pretium. Phasellus semper, nulla sed maximus mollis. Nulla ex sapien, pulvinar ac molestie eleifend, fermentum non urna.
+                    ul
+                        li One
+                        li Two
+                        li Three
+
+    include ../sections/career/form
+
+
+block append breadcrumbs
+    +breadcrumb('Career', 'career.html')
+    +breadcrumb('Junior Security & Safety Officer')

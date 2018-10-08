@@ -1,0 +1,27 @@
+.card-bordered {
+  @include layers;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  &, &:hover {
+    color: $c-white;
+  }
+  &__image {
+    @include image-cover;
+    @include image-white-frame;
+    align-self: stretch;
+    filter: brightness(.7);
+    z-index: -1;
+    transition: filter .4s $easing;
+  }
+  &:hover {
+    .card-bordered__image {
+      filter: brightness(.85);
+    }
+  }
+  .user-editable-content {
+    -ms-grid-row-align: center;
+    z-index: 1;
+    transform: translateZ(0);
+  }
+}

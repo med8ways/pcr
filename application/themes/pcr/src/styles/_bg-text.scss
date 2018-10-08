@@ -1,0 +1,26 @@
+.bg-text {
+  @include font(230px, 270px, transparentize($c-light, 0.98));
+  position: absolute;
+  top: 60px;
+  z-index: 2;
+  font-family: $f-roboto;
+  font-weight: 900;
+  text-transform: uppercase;
+  pointer-events: none;
+  &_left {
+    right: 16%;
+  }
+  &_right {
+    left: 36%;
+  }
+  &_center {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &_more-visible {
+    color: transparentize($c-light, 0.9);
+  }
+  &_lighter {
+    color: transparentize($c-light, 0.95);
+  }
+}

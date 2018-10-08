@@ -1,0 +1,43 @@
+.content-pattern {
+  &__top {
+    text-align: center;
+    margin-bottom: 40px;
+    h1, h2, h3 {
+      margin: 0;
+    }
+  }
+  &__decor {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 60px;
+  }
+  .line-x {
+    margin-bottom: 50px;
+  }
+  &__entries {
+    margin-top: 50px;
+  }
+  &__buttons {
+    margin-top: 60px;
+    .button + .button {
+      margin-left: 30px;
+    }
+    justify-content: center;
+    @include buttons-fullwidth;
+  }
+  &__call-us {
+    @include small-uppercase;
+    font-weight: 500;
+    line-height: 1.3em;
+    margin-top: 40px;
+    margin-bottom: -45px;
+    text-align: center;
+    @include if-smaller-than(sm) {
+      margin-bottom: -20px;
+    }
+    &, a {
+      color: $c-gray-dark;
+    }
+  }
+}

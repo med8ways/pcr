@@ -1,0 +1,12 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Rooms & Suites'
+
+block content
+    include ../sections/rooms/cover
+    include ../sections/rooms/tabs
+    include ../sections/rooms/highlights
+
+block append breadcrumbs
+    +breadcrumb('Rooms & Suites')

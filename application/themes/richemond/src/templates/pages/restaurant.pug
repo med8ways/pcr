@@ -1,0 +1,134 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Restaurant'
+
+block content
+    include ../sections/restaurant/cover
+    include ../sections/restaurant/intro
+    include ../sections/restaurant/carousel
+    .mt-130.grid-container
+        .grid-x
+            .medium-8.medium-offset-2.cell
+                .content-pattern
+                    .text-center
+                        .emblem.emblem_small.emblem_white.emblem_collapsed
+                            i.icon-le-jardin
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-dessert.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Signature desserts
+                            h2 Pastry chef creations
+                    .line-x
+                    .user-editable-content.user-editable-content_text-center
+                        p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec faucibus dui. Nunc vel fringilla nisi, et rhoncus arcu. Praesent sit amet tincidunt elit, non fermentum est. Integer scelerisque felis sed hendrerit sagittis. Nam vitae mi quam. In hac habitasse platea dictumst uspendisse potenti.
+    .mt-60.owl-container
+        .owl-carousel
+            img(src=require('../../images/dessert.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+            img(src=require('../../images/dessert.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+    include ../sections/restaurant/two-halves_1
+    .mt-25.mb-40.grid-container
+        .grid-x.grid-margin-x.cards-row
+            .medium-6.large-4.cell
+                .card.card_small.card_popup
+                    +card_inner(
+                    null,
+                    'The terrace',
+                    'Unique selling point of ther restaurant in Spring and Summer',
+                    require('../../images/card-terrace.jpg'),
+                    'Make a reservation'
+                    )
+            .medium-6.large-4.cell
+                .card.card_small.card_popup
+                    +card_inner(
+                    null,
+                    'Main Hall',
+                    'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec faucibus dui. Nunc vel fringilla nisi, et rhoncus arcu',
+                    require('../../images/card-main-hall.jpg'),
+                    'Make a reservation'
+                    )
+
+            .medium-6.large-4.cell
+                .card.card_small.card_popup
+                    +card_inner(
+                    null,
+                    'Private Hall',
+                    'The restaurant has a private dining room for up to 16 guests, providing an ideal setting for special occasions such as birthdays or exclusive business lunches.',
+                    require('../../images/card-private-hall.jpg'),
+                    'Make a reservation'
+                    )
+    include ../sections/restaurant/two-halves_2
+    .mt-65.mb-50.grid-container
+        .grid-x
+            .medium-8.medium-offset-2.cell
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-staff.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Staff
+                            h2 The people behind Le Jardin in Geneva
+                    .line-x
+        .toggleable-layers
+            .grid-x
+                .medium-10.medium-offset-1.cell
+                    .toggleable-layers__toggles.tabs-toggles.tabs-toggles_equal
+                        ul
+                            li Chefs
+                            li Local producers
+            .mt-145.toggleable-layers__layers
+                each i in [1,2]
+                    .owl-carousel.owl-carousel_offset.owl-carousel_scalable.cards-row(data-items=3 data-dots='false' data-center='true')
+                        .card.card_person
+                            +card_inner(
+                            null,
+                            'Clement Jacquemier',
+                            'Diamant-Terre, Chevry – Truffles',
+                            require('../../images/card-private-hall.jpg')
+                            )
+                        .card.card_person
+                            +card_inner(
+                            null,
+                            'Jean-Jacques Imberty',
+                            'Ferme de Vessy – Lamb',
+                            require('../../images/card-terrace.jpg')
+                            )
+                        .card.card_person
+                            +card_inner(
+                            null,
+                            'Stéphanie Vuadens',
+                            'Miel Genevois – Honey',
+                            require('../../images/card-main-hall.jpg')
+                            )
+                        .card.card_person
+                            +card_inner(
+                            null,
+                            'Clement Jacquemier',
+                            'Diamant-Terre, Chevry – Truffles',
+                            require('../../images/card-private-hall.jpg')
+                            )
+                        .card.card_person
+                            +card_inner(
+                            null,
+                            'Fabrice Christinat',
+                            'Coppet – Fish',
+                            require('../../images/card-main-hall.jpg')
+                            )
+                        .card.card_person
+                            +card_inner(
+                            null,
+                            'Rolf & Yves Grolimund',
+                            'Domaine du Nant-d’Avril at Satigny',
+                            require('../../images/card-private-hall.jpg')
+                            )
+
+    include ../sections/restaurant/contact
+
+
+block append breadcrumbs
+    +breadcrumb('Restaurant')

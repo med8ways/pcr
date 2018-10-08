@@ -1,0 +1,15 @@
+.highlights {
+  background: $c-blue-dark;
+  &, a {
+    color: $c-white;
+  }
+  .emblem {
+    font-size: 596px;
+    color: $c-gray-light;
+    -ms-grid-column-align: center;
+    justify-self: center;
+  }
+  .o-95 {
+    padding: 60px 0;
+  }
+}

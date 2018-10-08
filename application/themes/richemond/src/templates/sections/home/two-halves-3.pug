@@ -1,0 +1,25 @@
+extends ../two-halves
+
+block vars
+    - classes += ' two-halves_stacked'
+
+block layer_fluid
+    a(href='').two-halves__image
+        +image_srcset(require('../../images/half_meetings.jpg?sizes=640w+1024w+1400w'), 1400, '100vw')
+
+block layer_contained
+    .grid-x
+        .large-8.large-offset-2.cell
+            .two-halves__content
+                .content-pattern
+                    .content-pattern__decor
+                        img(src=require('../../images/icons/decor-events.svg') alt)
+                    .content-pattern__top
+                        .user-editable-content
+                            h4 Meeting & events
+                            h2 Flexible meeting rooms with daylight
+                    .line-x
+                    .user-editable-content
+                        p Discover a world of tranquillity at Le Spa by Sisley. Enjoy special treatments, hammam and sauna or exercice in the fitness studio
+                    .content-pattern__buttons.flex-container.align-center
+                        a.button(href="") More about meeting rooms

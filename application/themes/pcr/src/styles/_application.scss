@@ -1,0 +1,74 @@
+.application {
+  max-width: 100%;
+  overflow-x: hidden;
+  &[data-role="root"] {
+    // there may be many .application divs, they are just wrappers that separate our elements from
+    // Concrete5 elements
+    // root is main scrollable element
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100vh;
+    padding-top: $header-height;
+
+    transition: transform 0.7s $easing, opacity 0.7s $easing;
+    transform-origin: center top 0;
+
+    &::before {
+      $_backgroundColor: transparentize($c-dark, 0.8);
+
+      position: fixed;
+      z-index: 2;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+
+      visibility: hidden;
+
+      content: "";
+      transition: opacity $duration $easing,
+      visibility 0s $duration;
+
+      opacity: 0;
+      background-color: $_backgroundColor;
+    }
+
+    &.application_has-cookies {
+      transform: scale(0.95) translateY(30px);
+
+      opacity: 0.5;
+
+      &::before {
+        background: none;
+      }
+    }
+
+    &.application_has-modal {
+      &::before {
+        visibility: visible;
+
+        transition-delay: 0s;
+
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.content {
+  position: relative;
+  z-index: 1; // everything inside is not higher then header
+  transition: transform $duration $easing;
+
+  &:empty {
+    padding: 0;
+  }
+
+  .menu-opened & {
+    transform: translateX(-30px)
+  }
+}
+

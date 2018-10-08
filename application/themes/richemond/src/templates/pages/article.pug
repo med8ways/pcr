@@ -1,0 +1,13 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Be our guest and fully experience Geneva'
+
+block content
+    include ../sections/article/top-image
+    include ../sections/article/plate
+    include ../sections/article/article
+
+block append breadcrumbs
+    +breadcrumb('News', 'news.html')
+    +breadcrumb('Be our guest and fully experience Geneva')

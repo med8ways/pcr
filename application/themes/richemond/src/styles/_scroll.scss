@@ -1,0 +1,21 @@
+.scroll {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  @include if-smaller-than(sm) {
+    display: none;
+  }
+  &__line {
+    height: 50px;
+    width: 1px;
+    background: linear-gradient(transparentize($c-white, 1), transparentize($c-white, 0));
+    margin-bottom: 15px;
+  }
+  &__button {
+    @include small-uppercase;
+    color: $c-gray-dark;
+  }
+}

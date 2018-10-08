@@ -1,0 +1,17 @@
+@include if-bigger-than(xxs)  { /* Wider than 420px */ }
+@include if-bigger-than(xs)   { /* Wider than 576px */ }
+@include if-bigger-than(s)    { /* Wider than 640px */ }
+@include if-bigger-than(m)    { /* Wider than 768px */ }
+@include if-bigger-than(l)    { /* Wider than 1024px */ }
+@include if-bigger-than(xl)   { /* Wider than 1200px */ }
+@include if-bigger-than(xxl)  { /* Wider than 1440px */ }
+
+@include if-smaller-than(xxl) { /* Smaller than 1439px */ }
+@include if-smaller-than(xl)  { /* Smaller than 1199px */ }
+@include if-smaller-than(l)   { /* Smaller than 1023px */ }
+@include if-smaller-than(m)   { /* Smaller than 767px */ }
+@include if-smaller-than(s)   { /* Smaller than 639px */ }
+@include if-smaller-than(xs)  { /* Smaller than 575px */ }
+@include if-smaller-than(xxs) { /* Smaller than 419px */ }
+
+@media (pointer: coarse){/*touch devices*/}

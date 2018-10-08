@@ -1,0 +1,111 @@
+extends ../layout
+
+block vars
+    - page_title = 'Services'
+
+block content
+    .content__cover.content__md
+        +additional-content('Prestige car romand', 'Prestige')(class='bg-text_left cover-bg-text')
+        +pic-box(require('@/images/cover/cover-service.jpg'), 'Porsche', require('@/images/cover/cover-service@2x.jpg'))(class='image-box_cover image-box_light-transparent image-box_top-shadow' data-animation="parallax")
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-8.cell
+                    +cover-content('Il est bénéfique de coopérer avec nous', 'Prestation', 'With MySpace becoming more popular every day, there is the constant need to be different. There are millions')(class='info-box_cover')
+
+    .content__sub.content__sub_right.content__sm
+        .bg-text.bg-text_left(data-animation="parallax") Ventes de voitures
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-offset-1.large-5.cell
+                    +section-content('Le meilleur pour toi', 'Ventes de voitures', ['Fort d’une longue expérience dans le monde ' +
+                    'de la vente automobile, nous vous offrons un conseil avisé et vous aidons à trouver le modèle qui ' +
+                    'fera chavirer votre coeur, parmi plus de 100 véhicules tous garantis QUALITY 1 ou par le constructeur de celui-ci..'])
+                .large-6.cell
+                    .image-wrap
+                        +pic-box(require('@/images/services/ventes.png'), 'Ventes de voitures', require('@/images/services/ventes@2x.png'))
+
+    .content__sub.content__sub_left.content__sm
+        .lines.lines_right !{require('@/images/inline/lines.svg')}
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-6.cell
+                    .image-wrap
+                        +pic-box(require('@/images/services/livraison.png'), 'Livraison suisse', require('@/images/services/livraison@2x.png'))
+                .large-5.cell
+                    +section-content('Livraison partout', 'Livraison 7/7 en suisse', ['Mais vous habitez trop loin ou vous n’avez pas ' +
+                    'le temps de vous déplacer ? Chez Prestige Car Romand, il n’y a pas de problème, que des solutions. Nous nous ' +
+                    'engageons à vous livrer dans les meilleures conditions et délais sur l’intégralité du territoire helvétique. ' +
+                    'Les démarches administratives seront effecrtuées par nos soins et la livraison de votre voiture s’effectuera ' +
+                    'sur le lieu de votre choix.'])
+
+    .content__sub.content__sub_right.content__sm
+        .bg-text.bg-text_left(data-animation="parallax") Réparation de voiture
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-offset-1.large-5.cell
+                    +section-content('Rapidement et efficacement', 'Service de reparation', ['Once the printer ink runs ' +
+                    'dry it has to be replaced with another inkjet cartridge. There are many reputed companies like Canon, ' +
+                    'Epson, Dell, and Lexmark that provide the necessary cartridges to replace the empty cartridges.'])
+                .large-6.cell
+                    .image-wrap
+                        +pic-box(require('@/images/services/reparation.png'), 'Service de reparation', require('@/images/services/reparation@2x.png'))
+
+    .content__sub.content__sub_left.content__sm
+        .bg-text.bg-text_right(data-animation="parallax") Dépannage
+        .lines.lines_right !{require('@/images/inline/lines.svg')}
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-6.cell
+                    .image-wrap
+                        +pic-box(require('@/images/services/depannage.png'), 'Dépannage', require('@/images/services/depannage@2x.png'))
+                .large-5.cell
+                    +section-content('Une panne ou un problème sur la route', 'Dépannage', ['Mais vous habitez trop loin ou vous n’avez pas ' +
+                    'le temps de vous déplacer ? Chez Prestige Car Romand, il n’y a pas de problème, que des solutions. Nous nous ' +
+                    'engageons à vous livrer dans les meilleures conditions et délais sur l’intégralité du territoire helvétique. ' +
+                    'Les démarches administratives seront effecrtuées par nos soins et la livraison de votre voiture s’effectuera ' +
+                    'sur le lieu de votre choix.'])
+
+    .content__sub.content__sub_right.content__sm
+        .bg-text.bg-text_left(data-animation="parallax") Gardiennage
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-offset-1.large-5.cell
+                    .info-box.info-box_step-list(data-animation="stagger-horizontal")
+                        .info-box__subtitle Nous nous en occupons pour vous
+                        h2 Gardiennage
+                        .info-box__inner(data-animation="stagger-horizontal")
+                            h3 Classic : Gardiennage
+                            p Et mise en charge de la batterie  (place intérieure)
+                            p &nbsp;
+                            h3 Premium : Gardiennage
+                            p Et mise en charge de la batterie et nettoyage de  la carrosserie  (place intérieure)
+                            p &nbsp;
+                            h3 Prestige : Gardiennage
+                            p Mise en charge de la batterie, nettoyage intérieur-extérieur et traitement spécifique (place intérieure)
+                .large-6.cell
+                    .image-wrap
+                        +pic-box(require('@/images/services/gardiennage.png'), 'Gardiennage', require('@/images/services/gardiennage@2x.png'))
+
+    .content__sub.content__sub_left.content__lg
+        .grid-container
+            .grid-x.grid-margin-x.align-middle
+                .large-6.cell
+                    .image-wrap
+                        +pic-box(require('@/images/services/conditions.png'), 'Les meilleures conditions', require('@/images/services/conditions@2x.png'))
+                .large-5.cell
+                    .info-box(data-animation="stagger-horizontal")
+                        .info-box__subtitle de meilleures conditions
+                        h2 Les meilleures conditions
+                        .info-box__inner
+                            ul(data-animation="stagger-horizontal")
+                                li 2ème étage, avec ascenseur
+                                li Entretien carrosserie
+                                li Entretien mécanique
+                                li Service de transport
+                                li Nettoyage intérieur/extérieur
+                                li Maintien de charge batterie
+                                li Disponibilité en 2018
+                                li Multiples autres prestations, sur demande
+
+    include ../subscribe
+

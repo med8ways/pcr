@@ -1,0 +1,24 @@
+extends ../cover
+
+block vars
+    - image = require('../../images/cover_banquet.jpg?sizes=640w+1024w+1400w')
+
+block append layers
+    .cover__overlay
+        .grid-container
+            .grid-x
+                .medium-8.medium-offset-2.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .line-y
+                        .cover__uppertext
+                            p Meeting & events
+                        .cover__title
+                            h1 Flexible meeting rooms with daylight
+            .grid-x
+                .medium-6.medium-offset-3.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .user-editable-content.user-editable-content_text-center.o-80
+                            p Discover a world of tranquillity at Le Spa by Sisley. Enjoy special treatments, hammam and sauna or exercice in the fitness studio
+            .mt-50.flex-container.align-center
+                a(href='').button Reserve the meeting room
+                a(href='').button.button_transparent Download the banquet menu

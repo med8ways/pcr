@@ -1,0 +1,105 @@
+@mixin if-smaller-than($breakpoint-name) {
+  @media (max-width: #{map-get($breakpoints, $breakpoint-name) - 1}) {
+    @content;
+  }
+}
+
+@mixin if-bigger-than($breakpoint-name) {
+  @media (min-width: #{map-get($breakpoints, $breakpoint-name)}) {
+    @content;
+  }
+}
+
+@mixin if-lower-than($breakpoint-name) {
+  @media (max-height: #{map-get($breakpointsVertical, $breakpoint-name)}) {
+    @content;
+  }
+}
+
+@mixin image-cover {
+  overflow: hidden;
+  > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@mixin size($width, $height, $bg) {
+  width: $width;
+  height: $height;
+  background: $bg;
+}
+
+@mixin covers-parent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin font($size, $height, $color) {
+  font-size: $size;
+  line-height: $height;
+  color: $color;
+}
+
+@mixin customScroll {
+  &::-webkit-scrollbar {
+    width: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: transparentize($c-dark-main, 0.5);
+    border-radius: 0;
+    border: none;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $c-brand;
+    border-radius: 2px;
+  }
+}
+
+@mixin webkit-smoothscroll {
+  overflow: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin pos($type, $a, $b, $pos: absolute) {
+  @if $type == 'topLeft' {
+    top: $a;
+    left: $b;
+    position: $pos;
+  } @elseif $type == 'topRight' {
+    top: $a;
+    right: $b;
+    position: $pos;
+  } @elseif $type == 'bottomLeft' {
+    bottom: $a;
+    left: $b;
+    position: $pos;
+  } @elseif $type == 'bottomRight' {
+    bottom: $a;
+    right: $b;
+    position: $pos;
+  }
+}
+
+@mixin centered {
+  @include pos('topLeft', 50%, 50%);
+  transform: translate(-50%, -50%);
+}
+
+@mixin square($width) {
+  width: $width;
+  height: $width;
+}
+
+@mixin input-placeholder {
+  &.placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}

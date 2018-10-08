@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="15px" height="15px" viewBox="0 0 15 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>Shape</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Conciergerie" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="To-Do-List" transform="translate(-922.000000, -1216.000000)" fill-rule="nonzero" fill="#525B74">
+            <g id="Items" transform="translate(165.000000, 738.000000)">
+                <g id="Item" transform="translate(570.000000, 0.000000)">
+                    <g id="button-/-Explore-More-/-Dark" transform="translate(157.000000, 455.000000)">
+                        <g id="icon-/-Link" transform="translate(30.000000, 23.000000)">
+                            <path d="M7.68072289,2.33031674 L0.903614458,2.33031674 L0.903614458,14.0950226 L12.6506024,14.0950226 L12.6506024,7.30769231 L13.5542169,7.30769231 L13.5542169,14.5475113 C13.5542169,14.7963801 13.3509036,15 13.1024096,15 L0.451807229,15 C0.203313253,15 0,14.7963801 0,14.5475113 L0,1.87782805 C0,1.62895928 0.203313253,1.42533937 0.451807229,1.42533937 L7.68072289,1.42533937 L7.68072289,2.33031674 Z M15,0 L15,4.59276018 L14.0963855,4.59276018 L14.0963855,1.53846154 L7.47740964,8.14479638 L6.84487952,7.51131222 L13.4412651,0.904977376 L10.3915663,0.904977376 L10.3915663,0 L15,0 Z" id="Shape"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

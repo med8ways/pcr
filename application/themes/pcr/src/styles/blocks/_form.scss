@@ -1,0 +1,75 @@
+.input {
+  &-group {
+    position: relative;
+    margin-bottom: 30px;
+    border-bottom: 1px solid transparentize($c-light, 0.6);
+    transition: border-color $duration-sm;
+    input,
+    textarea {
+      @include font(13px, 25px, $c-light);
+      height: 56px;
+      width: 100%;
+      padding: 15px 15px 0 15px;
+      font-family: $f-lato;
+      font-weight: 400;
+      letter-spacing: 1px;
+    }
+    label {
+      @include pos('topLeft', 25px, 0);
+      font-size: 12px;
+      font-family: $f-oswald;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      pointer-events: none;
+      transform-origin: left center;
+      transition: transform $duration-sm, color $duration-sm;
+    }
+    span {
+      @include pos('bottomLeft', -1px, 0);
+      @include size(0, 1px, $c-brand);
+      transition: width $duration-sm, background-color $duration-sm;
+    }
+    &.scaled {
+      label {
+        transform: translate(0, -25px) scale(0.75);
+      }
+      span {
+        width: 100%;
+      }
+    }
+    &.invalid {
+      border-color: transparentize($c-error, 0.5);
+      label {
+        color: $c-error;
+      }
+      span {
+        background-color: $c-error;
+      }
+    }
+    &[class*='validate'] {
+      label {
+        &:after {
+          @include pos('topLeft', -5px, 100%);
+          content: '*';
+          margin-left: 10px;
+          color: $c-brand;
+        }
+      }
+    }
+    &_message {
+      textarea {
+        padding-top: 0;
+      }
+      &.scaled {
+        label {
+          transform: translate(0, -50px) scale(0.75);
+        }
+      }
+    }
+  }
+  &-action {
+    margin-top: 70px;
+    margin-left: 40px;
+  }
+}

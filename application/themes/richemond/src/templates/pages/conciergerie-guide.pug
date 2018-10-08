@@ -1,0 +1,72 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'A Bespoke Guide to Geneva - Autumn'
+
+block content
+    include ../sections/conciergerie-guide/top-block
+    .flex-container.align-center
+        include ../sections/conciergerie-guide/newsletter
+    .mt-80.grid-container
+        .grid-x.grid-margin-x
+            .medium-6.cell
+                .card.card_popup.card_guide
+                    +card_inner(
+                    '1st – 16th September 2017',
+                    'La Bâtie',
+                    'Named after the local forest from which it sprang, La Bâtie festival keeps the summer spirit alive into September. Playing at venues all over Geneva',
+                    require('../../images/card-batie.jpg'),
+                    '<a href="" class="button button_light"><i class="icon-share"></i>Discover More</a>'
+                    )
+            .medium-6.cell
+                .card.card_popup.card_guide
+                    +card_inner(
+                    '14th September 2017',
+                    'La Nuit des Bains',
+                    '<p>Set in Geneva’s Quartier des Bains (hence its name), La Nuit des Bains marks three exceptional evenings of art in Geneva, taking place in March, May and September. Strolling across the neighbourhood, visitors and locals enter galleries, sample wines and observe award ceremonies. Some are hungry for crash-courses in contemporary art, others look to buy, and some just enjoy its relaxed atmosphere.</p>' +
+                    '<p>&nbsp;</p>' +
+                    '<p><a href="http://www.quartierdesbains.ch">www.quartierdesbains.ch</a></p>',
+                    require('../../images/card-ceramics.jpg'),
+                    '<a href="" class="button button_light"><i class="icon-share"></i>Discover More</a>'
+                    )
+            .medium-6.cell
+                .card.card_popup.card_guide
+                    +card_inner(
+                    '19th May 2017 – 7th January 2018',
+                    'Art of the Aboriginals at MEG',
+                    'Examining Australia’s indigenous cultural heritage, MEG’s Art of the Aboriginals exhibition contains everything from boomerangs to engraved pearls.',
+                    require('../../images/card-aborigens.jpg'),
+                    '<a href="" class="button button_light"><i class="icon-share"></i>Discover More</a>'
+                    )
+            .medium-6.cell
+                .card.card_popup.card_guide
+                    +card_inner(
+                    '18th May – 15th October 2017',
+                    'The Garden, 200 Years of Passion',
+                    'The Garden, 200 Years of Passion is part of a programme of events taking place this year celebrating the bicentennial of the Geneva Botanical Conservatory …',
+                    require('../../images/card-garden.jpg'),
+                    '<a href="" class="button button_light"><i class="icon-share"></i>Discover More</a>'
+                    )
+            .medium-6.cell
+                .card.card_popup.card_guide
+                    +card_inner(
+                    '16th September – 10th December 2017',
+                    'International Ceramics Competition',
+                    'Held every two years in Carouge, just outside Geneva, the International Ceramics Competition is a celebration of the art of ceramic-making and a fixture on the calenda…',
+                    require('../../images/card-ceramics.jpg'),
+                    '<a href="" class="button button_light"><i class="icon-share"></i>Discover More</a>'
+                    )
+            .medium-6.cell
+                .card.card_popup.card_guide
+                    +card_inner(
+                    '14th March – 30th September 2017',
+                    'MAH | Objets Issus du Trafic Illicite',
+                    'Trafficking in priceless cultural and archeological objects is an ongoing problem; the plundering of history is not new, but it is gaining increasing recognition. Nine illegal…',
+                    require('../../images/card-mah.jpg'),
+                    '<a href="" class="button button_light"><i class="icon-share"></i>Discover More</a>'
+                    )
+    include ../sections/pagination
+
+block append breadcrumbs
+    +breadcrumb('Conciergerie', 'conciergerie.html')
+    +breadcrumb('A Bespoke Guide to Geneva')

@@ -1,0 +1,15 @@
+extends ../layout
+
+block vars
+    - page_title = '404'
+    - error_page = true
+
+block content
+    .content__cover.content__error.is-static
+        +additional-content('Page not found…', '404')(class='bg-text_center')
+        .grid-container
+            .grid-x.grid-margin-x
+                .large-offset-1.large-10.cell
+                    .info-box.info-box_error
+                        h1 404 page
+                        h2 sorry this page not found…

@@ -1,0 +1,27 @@
+extends ../form
+
+block vars
+    - classes = 'plate plate_contact-form mb-100'
+
+block top_content
+    h2 Get in Touch
+    p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent consequat turpis vestibulum tortor gravida, at mattis tellus sodales.
+
+block append column_left
+    +input_block('Country', null, ['Armenia', 'Belgium', 'Canada', 'Denmark'])
+
+block column_right
+    +input_block('Address')
+    +input_block('Nature Of Enquiry', null, ['Booking', 'Other'])
+    +input_block('Please contact me by', null, ['E-mail', 'Phone'])
+    +input_block('Message', null, null, 'textarea')
+    .contact-form__buttons
+        .flex-container.align-justify.align-top
+            .input-file
+                label.button.button_light(for='input-block-101') Upload your CV
+
+                input.input-file__input(id='input-block-101' name='input-block-101' type='file' autocomplete='off' data-role='input')
+
+                .input-file__uploaded.label(data-role='uploaded') Uploaded:
+                    span(data-role='name')
+            button.button(type='submit') Send

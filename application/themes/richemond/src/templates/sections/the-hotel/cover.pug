@@ -1,0 +1,24 @@
+extends ../cover
+
+block vars
+    - image = require('../../images/cover_archive.jpg?sizes=640w+1024w+1400w')
+
+block append layers
+    .cover__overlay
+        .grid-container
+            .grid-x
+                .medium-8.medium-offset-2.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .line-y
+                        .cover__uppertext
+                            p The Hotel
+                        .cover__title
+                            h1 About Le Richemond
+            .grid-x
+                .medium-6.medium-offset-3.cell
+                    .flex-container.flex-dir-column.align-middle
+                        .user-editable-content.user-editable-content_text-center.o-80
+                            p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut nec faucibus dui. Nunc vel fringilla nisi, et rhoncus arcu. Praesent sit amet tincidunt elit, non fermentum est.
+            .mt-50.flex-container.align-center
+                a(href='#timeline').button Our History
+                a(href='#factsheet').button.button_transparent Factsheet

@@ -1,0 +1,88 @@
+mixin picture(src1x, picAlt, src2x)
+    if src2x
+        img(src=src1x srcset=src1x + ' 1x, ' + src2x + ' 2x' draggable='false' alt= picAlt)
+    else
+        img(src=src1x draggable='false' alt= picAlt)
+
+mixin link(href, name)
+    a(href= href)&attributes(attributes)= name
+
+mixin pic-link(href, src, picAlt, src2x)
+    a(href= href)&attributes(attributes)
+        if src2x
+            +picture(src, picAlt, src2x)
+        else
+            +picture(src, picAlt)
+
+
+
+mixin pic-box(src1x, picAlt, src2x)
+    .image-box&attributes(attributes)
+        +picture(src1x, picAlt, src2x)
+
+mixin additional-content(sideTitle, bgTitle)
+    if sideTitle
+        .sidebar-title= sideTitle
+    if bgTitle
+        .bg-text&attributes(attributes)(data-animation="parallax")=  bgTitle
+
+mixin cover-content(subtitle, title, desc, href, name)
+    .info-box&attributes(attributes)(data-animation="stagger")
+        .info-box__subtitle= subtitle
+        h1= title
+        if desc
+            .info-box__inner
+                p= desc
+        if href
+            .info-action
+                a.btn(href= href)= name
+                    span
+
+mixin section-content(subtitle, title, desc, href, name)
+    .info-box&attributes(attributes)
+        .info-box__subtitle(data-animation ="fade-right")= subtitle
+        h2(data-animation ="fade-left")= title
+        if desc
+            .info-box__inner(data-animation ="fade-right")
+                each val in desc
+                    p !{val}
+        if href
+            .info-action(data-animation ="fade-left")
+                a.btn(href= href)= name
+                    span
+
+mixin gallery-item(href, src1x, alt, src2x)
+    a.gallery__item.js-hover-item(href= href)
+        .image-box
+            +picture(src1x, alt, src2x)
+
+mixin slider-item(href, src1x, alt, src2x, model, price, date, km, name)
+    a.slider__item(href= href)
+        .slider__item-image
+            +pic-box(src1x, alt, src2x)
+        .slider__item-info
+            h3= model
+            .slider__item-info-list
+                span= date
+                span.delimiter |
+                span= km
+                span.delimiter |
+                span= name
+            h4= price
+
+mixin news-item(src1x, picAlt, src2x, subtitle, title, desc, href, name)
+    .news-item
+        +pic-box(src1x, picAlt, src2x)
+        .info-box
+            .info-box__subtitle= subtitle
+            h2= title
+            if desc
+                .info-box__inner
+                    p= desc
+            if href
+                .info-action
+                    a.btn(href= href)= name
+                        span
+
+
+

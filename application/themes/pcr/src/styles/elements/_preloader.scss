@@ -1,0 +1,30 @@
+.preloader {
+  @include covers-parent;
+
+  position: fixed;
+  z-index: 15; // to be over header and scroll to top button
+
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+
+  background: $c-bg-fill;
+
+  img {
+    opacity: 0;
+    max-width: 300px;
+    margin-top: 45px;
+    margin-bottom: 45px;
+  }
+}
+
+.progress {
+  width: 220px;
+  height: 2px;
+
+  transform: scaleX(0);
+  transform-origin: left center;
+
+  background: $c-brand;
+}

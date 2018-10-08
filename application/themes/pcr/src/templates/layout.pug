@@ -1,0 +1,36 @@
+include mixins
+
+- var site_name = 'Prestige Car Romand'
+- var page_title = ''
+- var error_page = false
+
+block vars
+
+doctype html
+
+html(lang='fr')
+    head
+        include elements/meta
+        title= (page_title ? page_title + ' - ' : '') + site_name
+        // css is appended by HtmlWebpackPlugin automatically here
+        // favicon is appended by FaviconsWebpackPlugin automatically here
+
+    body
+        .application(data-role="root")
+            include elements/preloader
+
+            include elements/header
+            include elements/sidebar
+
+            main.content
+                //if sub_head_title
+                //    include elements/sub-head
+                block content
+
+            if !error_page
+                include elements/footer
+
+            include elements/cookies
+
+        include elements/scripts
+        // js is appended here by HtmlWebpackPlugin automatically

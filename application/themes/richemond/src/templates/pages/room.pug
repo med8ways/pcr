@@ -1,0 +1,103 @@
+extends ../layout
+
+block layout_vars
+    - page_title = 'Royal Armleder Suite'
+
+block content
+    include ../sections/room/top-image
+    include ../sections/room/plate
+    .mt-60.grid-container
+            .grid-x
+                .medium-8.medium-offset-2
+                    .user-editable-content
+                        p A stunning penthouse, the Royal Armleder Suite is the choice of jet setters who know where to stay in Geneva. This expansive suite combines Art Deco, contemporary and neo classical styles for a stunning result. Marble, rare wood, gold and mosaics are found throughout, and the and the generous terrace perfect for dining and sunbathing overlooks Lake Geneva and the Alps. The luxurious open-plan living room features a fireplace and lounge area, whilst the dining room is lit by a handcrafted chandelier. Perfect for families or guests wishing to entertain, the suite may be converted to add one or two additional bedrooms.
+    .mt-90.owl-container
+        .owl-carousel(data-nav='true' data-dots='true')
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+            img(src=require('../../images/cover_fountain.jpg') alt)
+            img(src=require('../../images/royal-suite-bath.jpg') alt)
+            img(src=require('../../images/cover_panorama.jpg') alt)
+            img(src=require('../../images/cover_fountain.jpg') alt)
+
+    .mt-70.grid-container
+        .grid-x
+            .medium-10.medium-offset-1.cell
+                .pt-60.pb-60.features
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-glamour.svg') alt)
+                        .feature__text
+                            p Celebrity Glamour
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-canapes.svg') alt)
+                        .feature__text
+                            p Chef's selection of canapes
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-transfer.svg') alt)
+                        .feature__text
+                            p Complimentary Transfer
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-wifi.svg') alt)
+                        .feature__text
+                            p Complimentary Wi-Fi
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-butler.svg') alt)
+                        .feature__text
+                            p Private butler
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-welcome.svg') alt)
+                        .feature__text
+                            p Welcome amenities
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-champagne.svg') alt)
+                        .feature__text
+                            p Champagne upon arrival
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-views.svg') alt)
+                        .feature__text
+                            p Panoramic views
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-terrace.svg') alt)
+                        .feature__text
+                            p Terrace
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-signature-suite.svg') alt)
+                        .feature__text
+                            p Signature Suite
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-bar.svg') alt)
+                        .feature__text
+                            p Mini Bar
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-signature-suite.svg') alt)
+                        .feature__text
+                            p Luxury Linen
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-bathroom.svg') alt)
+                        .feature__text
+                            p Marble bathroom
+                    .feature
+                        .feature__image
+                            img(src=require('../../images/icons/feature-amenities.svg') alt)
+                        .feature__text
+                            p Luxury Bathrooms Amenities
+
+    include ../sections/room/two-halves
+    include ../sections/room/highlights
+
+block append breadcrumbs
+    +breadcrumb('Rooms & Suites', 'rooms.html')
+    +breadcrumb('Royal Armleder Suite')

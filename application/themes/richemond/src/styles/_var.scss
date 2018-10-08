@@ -1,0 +1,30 @@
+$c-void: #000000;
+$c-blue-dark: #020f18;
+$c-blue: #525b74;
+$c-gray-dark: #979ba6;
+$c-gray: rgba(151, 155, 156, .2);
+$c-gray-light: #f6f5fb;
+$c-white: #ffffff;
+$c-red: #c8102e;
+$c-text: $c-blue-dark;
+$c-accent: $c-red;
+
+$f-prata: Prata, serif;
+$f-muli: Muli, sans-serif;
+
+$breakpoints: (
+        sm: 40em,
+        md: 64em,
+        lg: 75em
+);
+
+$breakpointsVertical: (
+        xs: 480px,
+        sm: 520px,
+        md: 620px,
+);
+
+$easing: cubic-bezier(.25, .1, .25, 1);
+
+$header-height: 60px;
+$header-offset: 20px;
